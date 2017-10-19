@@ -1,0 +1,49 @@
+.panda {
+  background: @white;
+  padding: 60px 100px;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  box-sizing: border-box;
+
+  * {
+    color: @black;
+  }
+
+  & > :first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 60px;
+  }
+
+  section + section {
+    margin-top: 60px;
+  }
+
+  form {
+    display: block;
+
+    label,
+    textarea {
+      display: block;
+      width: 100%;
+    }
+
+    textarea {
+      min-width: 600px;
+      min-height: 300px;
+      margin-top: 20px;
+      resize: vertical;
+      box-sizing: border-box;
+      padding: 20px;
+    }
+  }
+}

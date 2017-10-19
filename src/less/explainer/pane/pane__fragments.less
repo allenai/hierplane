@@ -1,0 +1,97 @@
+.pane__fragments {
+  min-height: 56/@em;
+  padding: 2/@em 0;
+  position: relative;
+
+  &:after {
+    .u-pe;
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 40/@em;
+    z-index: 99999;
+    right: 0;
+    top: 0;
+
+    background: -moz-linear-gradient(left, fade(@pane-bg, 0%) 0%, fade(@pane-bg, 100%) 100%);
+    background: -webkit-linear-gradient(left, fade(@pane-bg, 0%) 0%,fade(@pane-bg, 100%) 100%);
+    background: linear-gradient(to right, fade(@pane-bg, 0%) 0%,fade(@pane-bg, 100%) 100%);
+  }
+
+  .pane__fragments__nowrap-container {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    white-space: nowrap;
+    margin-bottom: -4/@em;
+  }
+
+  .pane__fragments__nowrap-container__truncation-container {
+    display: table-cell;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 4/@em;
+  }
+
+  .fragment {
+    .u-select-none;
+    display: inline-block;
+    border: 2/@em solid transparent;
+    padding: 15/@em;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+
+    .fragment__type {
+      .t-smooth;
+      .t-uppercase;
+      text-shadow: 0 0 5/@em rgba(0,0,0,.5);
+      top: -2/@em;
+      left: -2/@em;
+      position: absolute;
+      display: block;
+      font-size: 9/@em;
+      color: fade(@white, 80%);
+      font-weight: bold;
+      padding: 3.5/@em 7.5/@em;
+    }
+
+    .fragment__text {
+      .t-smooth;
+      color: fade(@white, 80%);
+      font-size: 12/@em;
+    }
+
+    &.fragment--child {
+      border-color: #5c8b9b;
+      background: fade(#5c8b9b, 30%);
+
+      .fragment__type {
+        background: #5c8b9b;
+      }
+    }
+
+    &.fragment--self {
+      border-color: @focused-ui;
+      background: fade(@focused-ui, 50%);
+
+      .fragment__type {
+        background: @focused-ui;
+      }
+
+      .fragment__text {
+        color: @white;
+      }
+    }
+
+    &.fragment--ignored {
+      border-color: #797e85;
+      background: fade(#797e85, 30%);
+      opacity: .66;
+
+      .fragment__type {
+        background: #797e85;
+      }
+    }
+  }
+}

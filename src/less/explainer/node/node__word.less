@@ -1,0 +1,27 @@
+// Node Word
+
+.node__word {
+  .flex-container-column;
+  min-width: 30/@em;
+  min-height: @node-word-label-height + (@node-word-padding * 2);
+  text-align: center;
+  position: relative;
+}
+
+.node[data-has-side-children="true"] > .node__word {
+  min-width: 90/@em;
+}
+
+.node__word > * {
+  z-index: 1;
+  position: relative;
+}
+
+.node__word__content {
+  .u-w100;
+  .flex-container-column;
+}
+
+.ft.node-container--expanded > .ft__tr > .ft--middle-parent > .node:not(.node--seq) > .node__word > .node__word__content {
+  .u-h100;
+}

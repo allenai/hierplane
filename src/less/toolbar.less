@@ -1,0 +1,38 @@
+.toolbar,
+.toolbar__button {
+  .u-blocklist;
+}
+
+.toolbar {
+  .u-select-none;
+  .flex-container;
+  margin-left: auto;
+  padding-right: 30/@em;
+  transition: padding .05s @node-transition-ease;
+}
+
+.toolbar__button {
+  .u-100;
+  .flex-container-vcentered;
+}
+
+.toolbar__button__link {
+  .t-link;
+  .t-bold;
+  color: fade(@white, 40%);
+  padding: 20/@em;
+  transition: color @node-transition-duration @node-transition-ease, font-size .05s @node-transition-ease;
+
+  &:hover {
+    color: @white;
+  }
+}
+
+.toolbar__button--disabled {
+  .toolbar__button__link,
+  &:hover,
+  &:active {
+    color: fade(@white, 15%);
+    cursor: default;
+  }
+}

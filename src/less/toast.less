@@ -1,0 +1,26 @@
+.toast {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  margin: 16/@em;
+  padding: 16/@em;
+  border: 1/@em solid rgba(255,255,255,.3);
+  border-radius: 6/@em;
+
+  background: @trans-blue-light;
+
+  .toast__content__label {
+    font-size: 14/@em;
+  }
+}
+
+@media screen and (max-width: 80em) {
+  .toast {
+    position: relative;
+  }
+}
+
+#explainer-container .toast {
+  right: 100/@em;
+}

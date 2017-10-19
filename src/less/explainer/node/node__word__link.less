@@ -1,0 +1,82 @@
+// Node Links
+
+.node__word__link {
+  display: inline-block;
+  position: relative;
+  z-index: 9;
+
+  &,
+  & * {
+    .fn-backface-visibility(hidden);
+  }
+
+  .node__word__link__tab {
+    .flex-container-hcentered;
+    position: relative;
+    filter: drop-shadow(1/@em 2/@em 2/@em rgba(0,0,0,.15));
+  }
+
+  .node__word__link__tab__left-cap,
+  .node__word__link__tab__right-cap {
+    min-height: 21/@em;
+    width: 14/@em;
+    position: relative;
+  }
+
+  .node__word__link__tab__top-cap,
+  .node__word__link__tab__bottom-cap {
+    min-width: 21/@em;
+    height: 14/@em;
+    position: relative;
+  }
+
+  // This fixes a zoom rendering bug that displays annoying gaps between caps.
+  .node__word__link__tab__left-cap {
+    .fn-transform(translateX(0.5/@em));
+  }
+  .node__word__link__tab__right-cap {
+    .fn-transform(translateX(-0.5/@em));
+  }
+  .node__word__link__tab__top-cap {
+    .fn-transform(translateY(0.5/@em));
+  }
+  .node__word__link__tab__bottom-cap {
+    .fn-transform(translateY(-0.5/@em));
+  }
+
+  .node__word__link__label {
+    .flex-container-centered;
+    background: @link-bg-color;
+    border-bottom: 1/@em solid @link-border-color;
+    min-width: @node-word-link-label-size;
+    min-height: @node-word-link-label-size;
+    text-align: center;
+
+    span {
+      .t-uppercase;
+      .u-nowrap;
+      color: @link-text-color;
+      font-size: 10/@em;
+      font-weight: bold;
+    }
+  }
+
+  .node__word__link__tab svg {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+  }
+
+  .node__word__link__tab__svg__fill {
+   fill: @link-bg-color;
+  }
+
+  .node__word__link__tab__svg__stroke {
+   fill: none;
+   stroke: @link-border-color;
+   stroke-width: 1;
+   stroke-miterlimit: 10;
+  }
+}

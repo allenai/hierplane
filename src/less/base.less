@@ -1,0 +1,48 @@
+// Global Vars
+@base-font-size: 16px;
+@em: @base-font-size*1em;
+@rem: @base-font-size*1rem;
+@assets-path: "../assets/";
+
+@transition-duration: .2s;
+@transition-timing-function: ease;
+@transition-properties: @transition-duration @transition-timing-function;
+
+html, body {
+  .t-crisp;
+  .u-100;
+  .u-mp0;
+  background: @gray-slate;
+  font-size: @base-font-size;
+}
+
+body {
+  .flex-container-column;
+}
+
+* {
+  font-family: 'Oxygen', Arial, sans-serif;
+  color: @white;
+  font-size: 16/@em;
+}
+
+#root,
+div[data-reactroot],
+.container {
+  .u-100;
+}
+
+#console-container {
+  .flex-container-row;
+  .flex-justify-content(flex-end);
+}
+
+#explainer-container {
+  .flex-container;
+  .flex-container-column;
+  background: @passage-bg-color;
+
+  * {
+    font-family: Helvetica Neue, Arial, sans-serif;
+  }
+}

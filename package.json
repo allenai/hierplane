@@ -1,0 +1,34 @@
+{
+  "name": "hierplane",
+  "version": "0.0.1",
+  "description": "A tool for visualizing trees, tailored specifically to the analysis of parse trees.",
+  "repository": "allenai/hierplane",
+  "scripts": {
+    "build": "gulp build",
+    "js": "gulp js",
+    "watch": "gulp watch --color",
+    "test": "mocha --compilers js:babel-core/register 'app/**/*.test.js'"
+  },
+  "author": "euclid@allenai.org",
+  "license": "Apache 2.0",
+  "dependencies": {
+    "babel": "6.5.2",
+    "babel-core": "6.24.0",
+    "babel-plugin-transform-object-rest-spread": "6.23.0",
+    "babel-preset-es2015": "6.9.0",
+    "babel-preset-react": "6.11.1",
+    "chai": "3.5.0",
+    "classnames": "2.2.5",
+    "gulp": "3.8.11",
+    "history": "4.2.0",
+    "immutable": "3.8.1",
+    "mocha": "3.2.0",
+    "react": "15.3.0",
+    "react-dom": "15.3.0",
+    "react-redux": "5.0.3",
+    "react-router": "4.0.0-2",
+    "redux": "3.6.0",
+    "superagent": "2.1.0",
+    "syrup": "0.5.2"
+  }
+}

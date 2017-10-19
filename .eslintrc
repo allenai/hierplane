@@ -1,0 +1,76 @@
+{
+  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "no-alert": 2,
+    "comma-dangle": [
+      2,
+      "never"
+    ],
+    "strict": 1,
+    "jsx-quotes": 2,
+    "no-console": 1,
+    "curly": 2,
+    "react/jsx-boolean-value": [
+      2,
+      "always"
+    ],
+    "react/jsx-closing-bracket-location": [
+      2,
+      "after-props"
+    ],
+    "react/jsx-curly-spacing": [
+      2,
+      "never"
+    ],
+    "react/jsx-indent-props": [
+      2,
+      4
+    ],
+    "react/jsx-no-duplicate-props": 2,
+    "react/jsx-no-undef": 2,
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/no-danger": 1,
+    "react/no-did-mount-set-state": 1,
+    "react/no-did-update-set-state": 1,
+    "react/no-multi-comp": 1,
+    "react/no-unknown-property": 2,
+    "react/prop-types": 2,
+    "react/react-in-jsx-scope": 2,
+    "react/self-closing-comp": 2,
+    "react/wrap-multilines": 2
+  },
+  "ecmaFeatures": {
+    "arrowFunctions": true,
+    "blockBindings": true,
+    "classes": true,
+    "defaultParams": true,
+    "destructuring": true,
+    "forOf": true,
+    "generators": true,
+    "modules": true,
+    "objectLiteralComputedProperties": true,
+    "objectLiteralDuplicateProperties": false,
+    "regexUFlag": true,
+    "regexYFlag": true,
+    "restParams": true,
+    "spread": true,
+    "superInFunctions": true,
+    "templateStrings": true,
+    "jsx": true
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "globals": {
+    "it": true,
+    "describe": true,
+    "window": true,
+    "process": true
+  }
+}
