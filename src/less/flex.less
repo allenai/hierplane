@@ -1,0 +1,150 @@
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.flex-direction(@v) {
+  -webkit-flex-direction: @v;
+  -ms-flex-direction: @v;
+  flex-direction: @v;
+  // row (default): same as text direction
+  // row-reverse: opposite to text direction
+  // column: same as row but top to bottom
+  // column-reverse: same as row-reverse top to bottom
+}
+
+.flex-align-items(@v) { // Vertical alignment of single line of items
+  -webkit-align-items: @v;
+  -ms-flex-align: @v;
+  align-items: @v;
+  // stretch	(default): Items are stretched to fit the container
+  // center: Items are positioned at the center of the container
+  // flex-start: Items are positioned at the beginning of the container
+  // flex-end: Items are positioned at the end of the container
+  // baseline: Items are positioned at the baseline of the container
+}
+
+.flex-justify-content(@v) { // Horizontal alignment of children
+  -webkit-justify-content: @v;
+  -ms-justify-content: @v;
+  justify-content: @v;
+  // flex-start (default): items are packed toward the start line
+  // flex-end: items are packed toward to end line
+  // center: items are centered along the line
+  // space-between: items are evenly distributed in the line; first item is on the start line, last item on the end line
+  // space-around: items are evenly distributed in the line with equal space around them
+}
+
+.flex-wrap(@v) { // Row wrapping of children
+  -webkit-flex-wrap: @v;
+  flex-wrap: @v;
+  // nowrap (default): single-line which may cause the container to overflow
+  // wrap: multi-lines, direction is defined by flex-direction
+  // wrap-reverse: multi-lines, opposite to direction defined by flex-direction
+}
+
+.flex-align-content(@v) { // Vertical alignment of multiple lines of items
+  -webkit-align-content: @v;
+  align-content: @v;
+  // flex-start: lines packed to the start of the container
+  // flex-end: lines packed to the end of the container
+  // center: lines packed to the center of the container
+  // space-between: lines evenly distributed; the first line is at the start of the container while the last one is at the end
+  // space-around: lines evenly distributed with equal space between them
+  // stretch (default): lines stretch to take up the remaining space
+}
+
+.flex-align-self(@v) { // Vertical alignment of self
+  -webkit-align-self: @v;
+  align-self: @v;
+  // flex-start: cross-start margin edge of the item is placed on the cross-start line
+  // flex-end: cross-end margin edge of the item is placed on the cross-end line
+  // center: item is centered in the cross-axis
+  // baseline: items are aligned such as their baseline are aligned
+  // stretch (default): stretch to fill the container (still respect min-width/max-width)
+}
+
+.flex-basis(@v) { // Initial size of the flex item, before any available space is distributed
+  -webkit-flex-basis: @v;
+  flex-basis: @v;
+  // dimension with unit (cannot be negative)
+}
+
+.flex-grow(@v) { // defines the ability for a flex item to grow if necessary, size proportion relative to an item's siblings
+  -webkit-flex-grow: @v;
+  flex-grow: @v;
+  // number
+}
+
+.flex-shrink(@v) { // how much the flex item will shrink relative to the rest of the flex items in the flex container when there isn't enough space on the row.
+  -webkit-flex-shrink: @v;
+  flex-shrink: @v;
+  // number
+}
+
+.flex-order(@v) { // manually set ordering of a flex item
+  -webkit-order: @v;
+  order: @v;
+  // number
+}
+
+.flex(@g:0, @s:1, @b:auto) { // Shorthand for flex-grow, flex-shrink and flex-basis
+  -webkit-flex: @g @s @b;
+  -ms-flex: @g @s @b;
+  -flex: @g @s @b;
+}
+
+.flex-none { // Same as setting flex-grow 0, flex-shrink 0 and flex-basis auto
+  -webkit-flex: none;
+  -ms-flex: none;
+  -flex: none;
+}
+
+.flex-flow(@d:row, @w:nowrap) { // Shorthand for flex-direction and flex-wrap
+  -webkit-flex-flow: @d @w;
+  flex-flow: @d @w;
+}
+
+// Prefab Flex classes
+
+.flex-container-row {
+  .flex-container;
+  .flex-direction(row);
+}
+
+.flex-container-column {
+  .flex-container;
+  .flex-direction(column);
+}
+
+.flex-container-align-left {
+  .flex-container-row;
+  .flex-justify-content(flex-start);
+}
+
+.flex-container-align-right {
+  .flex-container-row;
+  .flex-justify-content(flex-end);
+}
+
+.flex-container-hcentered {
+  .flex-container;
+  .flex-justify-content(center); // Horizontally centered
+}
+
+.flex-container-vcentered {
+  .flex-container;
+  .flex-align-items(center); // Vertical centered
+}
+
+.flex-container-centered {
+  .flex-container;
+  .flex-align-items(center); // Vertical centered
+  .flex-justify-content(center); // Horizontally centered
+}
+
+.flex-distribute-vertically {
+  .flex-align-content(space-around);
+}

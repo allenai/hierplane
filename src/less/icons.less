@@ -1,0 +1,25 @@
+// Icon Sprite container
+#icons {
+  .u-tl;
+  position: absolute;
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  overflow: hidden;
+  z-index: -999;
+}
+
+// Working icon svg gradient assignment
+.icon__working__gradient__stop {
+  stop-color: @working;
+}
+
+.icon__working__gradient__stop--stop4,
+.icon__working__gradient__stop--stop5,
+.icon__working__gradient__stop--stop6 {
+  stop-opacity: 0;
+}
+
+.icon__working__path {
+  fill: url(#icon__working__gradient);
+}

@@ -1,0 +1,121 @@
+.euclid-header {
+  .flex-container-row;
+  background: @gray-slate;
+  position: relative;
+  min-height: 125/@em;
+  transition: min-height .05s @node-transition-ease;
+}
+
+.euclid-header__logo-tagline-container {
+  .flex-container-row;
+  .flex-align-items(center);
+  .u-select-none;
+  padding: 24/@em 43/@em;
+  cursor: default;
+  transition: font-size .05s @node-transition-ease, padding .05s @node-transition-ease;
+}
+
+.euclid-header__logo {
+  .u-mp0;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  .euclid-header__logo__glyph {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 18/@em;
+    width: 52/@em;
+    height: 52/@em;
+    fill: @orange;
+    transition: filter @transition-properties;
+  }
+
+  .euclid-header__logo__label {
+    font-family: 'Oxygen', sans-serif !important;
+    font-size: 44.24/@em;
+    color: @white;
+    font-weight: 100;
+    vertical-align: middle;
+    letter-spacing: -.05/@em;
+    transition: text-shadow @transition-properties;
+  }
+}
+
+.euclid-header__logo-container {
+  .t-link;
+  .flex-container-vcentered;
+  opacity: 1;
+  text-shadow: none;
+  transition: opacity @transition-properties;
+  min-height: 77/@em;
+
+  &:hover {
+    .euclid-header__logo__glyph {
+      filter: drop-shadow(0 0 10/@em rgba(255,239,193,.4));
+    }
+
+    .euclid-header__logo__label {
+      text-shadow: 0 0 10/@em rgba(255,239,193,.4);
+    }
+  }
+
+  &:active {
+    opacity: .75;
+  }
+}
+
+.euclid-header__tagline {
+  font-family: 'Oxygen', sans-serif !important;
+  border-left: 1/@em solid @gray-darker;
+  padding: 20/@em 34/@em;
+  margin: 5/@em 0 0 34/@em;
+  min-width: 198/@em;
+
+  & strong,
+  & span {
+    .u-mp0;
+    display: block;
+  }
+
+  & strong {
+    font-weight: 100;
+    font-size: 13.65/@em;
+    color: @white;
+    margin-bottom: 1/@em;
+  }
+
+  & span {
+    .t-smooth;
+    font-size: 10.74/@em;
+    color: @gray-medium-light;
+  }
+}
+
+@media screen and (max-width: 80em) {
+  .euclid-header__logo-tagline-container {
+    padding: 16/@em;
+  }
+}
+
+// Shrink Explainer header when screen height is in laptop bucket:
+@media screen and (max-height: 900px) {
+  #explainer-container {
+    .euclid-header {
+      min-height: 50/@em; // min-height is the animatable property.
+      max-height: 50/@em; // max-height forces header to a fixed height when shrunk.
+
+      .euclid-header__logo-tagline-container {
+        padding: 10/@em 30/@em;
+        font-size: .5em;
+      }
+
+      .toolbar {
+        padding-right: 2/@em;
+
+        .toolbar__button__link {
+          font-size: 13/@em;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.code {
+  .flex-container-column;
+  flex: 2;
+  background: @code-bg;
+
+  textarea.code__content {
+    .u-appearance-none;
+    .t-smooth;
+    .u-100;
+    display: block;
+    background: transparent;
+    white-space: pre;
+    box-sizing: border-box;
+    resize: none;
+    border: 3/@em solid transparent;
+    padding: 21/@em;
+    line-height: 21/@em;
+    font-size: 14/@em;
+    color: @code-text;
+    font-family: 'Ubuntu Mono', monospace !important;
+    transition: border-color @node-transition-duration @node-transition-ease, background-color @node-transition-duration @node-transition-ease;
+    cursor: text;
+
+    &:hover {
+      background: darken(@code-bg, 1%);
+    }
+
+    &:focus {
+      background: @passage-edit-bg;
+      outline: none;
+      border: none;
+      border: 3/@em solid @focused-ui;
+    }
+  }
+}

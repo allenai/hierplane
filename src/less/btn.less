@@ -1,0 +1,42 @@
+.btn {
+  .t-no-underline;
+  display: block;
+}
+
+.btn--ico {
+  opacity: .2;
+  background: rgba(225,235,255,.2);
+  border-radius: 100%;
+  width: 38/@em;
+  height: 38/@em;
+  line-height: 34/@em;
+  cursor: pointer;
+  text-align: center;
+  transition: opacity @transition-properties, background-color @transition-properties;
+
+  .btn--ico__glyph {
+    vertical-align: middle;
+    fill: @white;
+    opacity: .66;
+    width: 22/@em;
+    height: 22/@em;
+    transition: opacity @transition-properties;
+  }
+
+  &:hover {
+    .btn--ico--hover;
+  }
+
+  &:active {
+    opacity: .5 !important;
+  }
+}
+
+.btn--ico--hover {
+  opacity: 1;
+  background: @blue-light !important;
+
+  .btn--ico__glyph {
+    opacity: 1;
+  }
+}

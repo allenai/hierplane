@@ -1,0 +1,33 @@
+// Node Attributes
+
+.node__word__attrs {
+  .u-w100;
+  .flex-container-align-right;
+  .flex-align-items(flex-end);
+  min-height: 30/@em;
+  margin-top: -30/@em;
+
+  .node__word__attrs__item {
+    .flex-container-centered;
+    .flex-align-self(flex-end);
+    border-radius: 11/@em;
+    width: auto;
+    height: auto;
+    background: @attr-bg-color;
+    padding: 2/@em 9/@em;
+    margin: 0 7/@em 7/@em -2/@em;
+    transition: opacity @node-transition-duration @node-transition-ease, background-color @node-transition-duration @node-transition-ease;
+
+    &:first-child {
+      margin-left: 7/@em;
+    }
+
+    span {
+      .t-uppercase;
+      font-size: 10/@em;
+      font-weight: bold;
+      color: @attr-text-color;
+      .u-nowrap;
+    }
+  }
+}

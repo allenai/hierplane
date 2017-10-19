@@ -1,0 +1,45 @@
+// Node Children
+
+.node-children-container {
+  position: relative;
+  margin-bottom: -@node-word-margin * 2;
+  padding-bottom: @node-word-margin * 2;
+}
+
+.node-children-container,
+.ft--middle-children > .node-children-container {
+  .flex-container-row;
+  .flex-container-hcentered;
+}
+
+.ft--left-children > .node-children-container,
+.ft--right-children > .node-children-container {
+  .flex-container-column;
+
+  & > * {
+    .flex-align-self(flex-start);
+
+    & + * {
+      margin-top: 2 * @node-word-margin;
+    }
+
+    &:nth-child(2) {
+      margin-top: @node-word-margin;
+    }
+  }
+}
+
+.ft--left-children > .node-children-container {
+  & > * {
+    .flex-align-self(flex-end);
+  }
+}
+
+.node-children-container-defocus-trigger {
+  .u-child100;
+  .u-mp0 !important;
+}
+
+.node.node-container--expanded[data-has-down-children="true"][data-has-side-children="false"] {
+  padding-bottom: @node-word-margin;
+}

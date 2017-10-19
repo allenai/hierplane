@@ -1,0 +1,68 @@
+@lessPath: "./less/";
+@consolePath: "@{lessPath}console/";
+@explainerPath: "@{lessPath}explainer/";
+@pandaPath: "@{lessPath}panda/";
+
+// Common Modules
+@import '@{lessPath}base.less';
+@import '@{lessPath}btn.less';
+@import '@{lessPath}euclid-header.less';
+@import '@{lessPath}flex.less';
+@import '@{lessPath}icons.less';
+@import '@{lessPath}text.less';
+@import '@{lessPath}toast.less';
+@import '@{lessPath}toolbar.less';
+@import '@{lessPath}_colors.less';
+@import '@{lessPath}_functions.less';
+@import '@{lessPath}_utils.less';
+
+// Console Modules
+@import '@{consolePath}console.less';
+@import '@{consolePath}query-history.less';
+@import '@{consolePath}query-input.less';
+@import '@{consolePath}query-menu.less';
+
+// Explainer Modules
+@import '@{explainerPath}code.less';
+@import '@{explainerPath}ft.less';
+@import '@{explainerPath}loader.less';
+@import '@{explainerPath}main-stage.less';
+@import '@{explainerPath}meta-table.less';
+@import '@{explainerPath}parse-error.less';
+@import '@{explainerPath}parse-tree-toolbar.less';
+@import '@{explainerPath}passage.less';
+@import '@{explainerPath}tree-expansion-control.less';
+
+// Explainer / Node Modules
+@import '@{explainerPath}node/node_vars.less';
+@import '@{explainerPath}node/node.less';
+@import '@{explainerPath}node/node__word.less';
+@import '@{explainerPath}node/node__word__attrs.less';
+@import '@{explainerPath}node/node__word__label.less';
+@import '@{explainerPath}node/node__word__link.less';
+@import '@{explainerPath}node/node__word__tile.less';
+@import '@{explainerPath}node/node__word__ui.less';
+@import '@{explainerPath}node/node-children.less';
+@import '@{explainerPath}node/node-focus-trigger.less';
+
+// Explainer / Node Modifiers
+@import '@{explainerPath}node/node--segments-container.less';
+@import '@{explainerPath}node/node--seq.less';
+@import '@{explainerPath}node/node_mod.less';
+@import '@{explainerPath}node/node_pos.less';
+
+// Explainer / Pane Modules
+@import '@{explainerPath}pane/pane.less';
+@import '@{explainerPath}pane/pane__alt-parse-nav.less';
+@import '@{explainerPath}pane/pane__empty.less';
+@import '@{explainerPath}pane/pane__handler.less';
+@import '@{explainerPath}pane/pane__panel.less';
+@import '@{explainerPath}pane/pane__fragments.less';
+@import '@{explainerPath}pane/pane__toggle.less';
+@import '@{explainerPath}pane/pane-container.less';
+
+// Explainer / Pane Modifiers
+@import '@{explainerPath}pane/pane_mod.less';
+
+// Panda Modules
+@import '@{pandaPath}panda.less';

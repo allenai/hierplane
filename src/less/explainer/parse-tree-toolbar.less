@@ -1,0 +1,102 @@
+.parse-tree-toolbar {
+  .flex-container-align-right;
+  .u-select-none;
+  .u-mp0;
+  width: 140/@em;
+  position: absolute;
+  min-height: 44/@em;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  transition: opacity @node-transition-duration @node-transition-ease,
+              width .15s linear .15s,
+              z-index @node-transition-duration @node-transition-ease;
+
+  &:before {
+    .u-pe100;
+    background: darken(@main-stage-bg-color, 4%);
+    border-bottom: 2/@em solid @passage-border-color;
+    box-shadow: 0 1/@em 2/@em fade(darken(@main-stage-bg-color, 10%), 50%),
+                0 0 100/@em fade(@main-stage-bg-color, 66%);
+    opacity: 0;
+    transition: opacity .15s @node-transition-ease;
+  }
+
+  &:after {
+    .u-pe;
+    .u-100;
+    width: 180/@em;
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 92/@em;
+  }
+
+  &,
+  &.parse-tree-toolbar__item {
+    list-style: none;
+  }
+
+  .parse-tree-toolbar__item {
+    .u-mp0;
+    transition: opacity .15s @node-transition-ease;
+    display: block;
+    min-width: 24/@em;
+    min-height: 24/@em;
+    opacity: .25;
+
+    &:last-child {
+      padding-right: 8/@em;
+    }
+
+    .parse-tree-toolbar__item__mask {
+      .u-child100;
+      z-index: 999;
+      display: none;
+    }
+
+    .parse-tree-toolbar__item__label {
+      .u-select-none;
+      width: 130/@em;
+      position: absolute;
+      top: 25/@em;
+      right: 130/@em;
+      text-align: right;
+      font-size: 13/@em;
+      white-space: nowrap;
+      z-index: 0;
+      opacity: 0;
+      transition: opacity .3s @node-transition-ease;
+      cursor: default;
+    }
+
+    &:hover {
+      .parse-tree-toolbar__item__label {
+        opacity: .5;
+        transition-duration: 1s;
+      }
+    }
+  }
+
+  &:hover {
+    .u-w100;
+    transition: width 0s linear 0s;
+
+    &:before {
+      opacity: .975;
+    }
+
+    .parse-tree-toolbar__item {
+      opacity: 1;
+    }
+  }
+
+  &.parse-tree-toolbar--disabled {
+    opacity: 0;
+    z-index: -9;
+
+    .parse-tree-toolbar__item__mask {
+      display: block;
+    }
+  }
+}

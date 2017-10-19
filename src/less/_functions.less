@@ -1,0 +1,90 @@
+.fn-transform(@v) {
+  -webkit-transform: @v;
+  -ms-transform: @v;
+  transform: @v;
+}
+
+.fn-transform-origin(@v) {
+  -ms-transform-origin: @v;
+  -webkit-transform-origin: @v;
+  transform-origin: @v;
+}
+
+.fn-transition-transform(@d:@sec, @e:@eas) {
+  transition: -webkit-transform @d @e;
+  transition: -ms-transform @d @e;
+  transition: transform @d @e;
+}
+
+.fn-transition-transform-opacity(@d:@sec, @e:@eas) {
+  transition: opacity @d @e, -webkit-transform @d @e;
+  transition: opacity @d @e, -ms-transform @d @e;
+  transition: opacity @d @e, transform @d @e;
+}
+
+.fn-user-select(@v) {
+  -webkit-user-select: @v;
+  -moz-user-select: @v;
+  -ms-user-select: @v;
+  user-select: @v;
+}
+
+.fn-backface-visibility(@v) {
+  -webkit-backface-visibility: @v;
+  backface-visibility: @v;
+}
+
+.fn-transition(@p:all, @d:@sec, @e:@eas) {
+  transition: @p @d @e;
+}
+
+.fn-filter(@v) {
+  -webkit-filter: @v;
+  filter: @v;
+}
+
+.fn-gradient(@v) {
+  .fn-subtle-gradient(@v);
+
+  &:after {
+    .fn-gradient-contrast(@v);
+  }
+}
+
+.fn-subtle-gradient(@v) {
+  background: @v;
+  background: -moz-linear-gradient(top,  lighten(@v, 8%) 0%, darken(@v, 8%) 100%);
+  background: -webkit-linear-gradient(top,  lighten(@v, 8%) 0%,darken(@v, 8%) 100%);
+  background: linear-gradient(to bottom,  lighten(@v, 8%) 0%,darken(@v, 8%) 100%);
+}
+
+.fn-gradient-contrast(@v) {
+  background: @v;
+  background: -moz-linear-gradient(top,  lighten(@v, 18%) 0%, darken(@v, 2%) 100%);
+  background: -webkit-linear-gradient(top,  lighten(@v, 18%) 0%,darken(@v, 2%) 100%);
+  background: linear-gradient(to bottom,  lighten(@v, 18%) 0%,darken(@v, 2%) 100%);
+}
+
+.fn-trans-gradient(@v) {
+  background: -moz-linear-gradient(top,  fade(@v, 100%) 0%, fade(@v, 0%) 100%);
+  background: -webkit-linear-gradient(top,  fade(@v, 100%) 0%,fade(@v, 0%) 100%);
+  background: linear-gradient(to bottom,  fade(@v, 100%) 0%,fade(@v, 0%) 100%);
+}
+
+.fn-placeholder-color(@v) {
+  ::-webkit-input-placeholder {
+    color: @v;
+  }
+
+  :-moz-placeholder {
+    color: @v;
+  }
+
+  ::-moz-placeholder {
+    color: @v;
+  }
+
+  :-ms-input-placeholder {
+    color: @v;
+  }
+}
