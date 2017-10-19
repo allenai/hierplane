@@ -23,7 +23,7 @@ Proudly built by the [Euclid](http://euclid.allenai.org) team at [AI2](http://al
 4.Run the visualization engine:
 
   ```
-  $open dist/index.html
+  $ open dist/index.html
   ```
 
 ## Making Changes
