@@ -113,6 +113,7 @@ class EuclidExplainer extends Component {
       firstLoad: false,
       jsonUrl: fetchPath,
       errorState: false,
+      emptyQuery: false,
       selectedData,
     });
   }

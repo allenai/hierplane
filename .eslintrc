@@ -71,6 +71,8 @@
     "it": true,
     "describe": true,
     "window": true,
-    "process": true
+    "process": true,
+    "__dirname": true,
+    "after": true
   }
 }
