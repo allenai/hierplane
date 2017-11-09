@@ -1,0 +1,38 @@
+// Node Tile
+
+.node__word__tile {
+  .fn-gradient(@color0);
+}
+
+.node__word__tile,
+.node__word__tile:after {
+  .u-100;
+  .u-tl;
+  border: @node-word-tile-border-width solid @node-border-color;
+  border-radius: @node-border-radius;
+  box-shadow: @node-shadow-properties @node-box-shadow-color;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.node__word__tile:after {
+  .u-pe;
+  position: absolute;
+  border: none;
+  box-shadow: none;
+  opacity: 0;
+}
+
+.node-tile-transition-props {
+  transition: opacity @node-transition-duration @node-transition-ease,
+              border-color @node-transition-duration @node-transition-ease,
+              box-shadow @node-transition-duration @node-transition-ease;
+}
+
+.node:not(.node--focused) {
+  & > .node__word > .node__word__tile {
+    &:after {
+      .node-tile-transition-props;
+    }
+  }
+}

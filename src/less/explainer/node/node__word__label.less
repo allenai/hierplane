@@ -1,0 +1,45 @@
+// Node label
+
+.node__word__label {
+  .flex-container;
+  .flex-justify-content(center);
+  .flex-grow(1);
+  padding: @node-word-padding;
+  min-height: @node-word-label-height;
+  min-width: 16/@em;
+  position: relative;
+  white-space: nowrap;
+
+  span {
+    display: block;
+  }
+
+  .node__word__label__headword {
+    color: @node-text-color;
+    text-shadow: 0 0 20/@em @node-text-shadow-color;
+    font-size: 18/@em;
+    opacity: 1;
+    transition: color @node-transition-duration @node-transition-ease, opacity .05s @node-transition-ease;
+  }
+
+  .node__word__label__rollup {
+    font-size: 14/@em;
+    display: none;
+    font-weight: bold;
+    color: fade(@node-text-color, 53%);
+    text-shadow: none;
+    margin-top: -27/@em;
+    padding-top: 2/@em;
+    transition: color @node-transition-duration @node-transition-ease;
+
+    &:first-child {
+      margin-top: auto;
+    }
+
+    strong {
+      transition: color @node-transition-duration @node-transition-ease;
+      color: @node-text-color;
+      text-shadow: 0 0 20/@em fade(@node-text-shadow-color, 66%);
+    }
+  }
+}

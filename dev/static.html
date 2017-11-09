@@ -1,0 +1,49 @@
+<!DOCTYPE html><html>
+  <head>
+    <title>Static Hierplane</title>
+    <link rel="stylesheet" href="../dist/static/hierplane.min.css">
+    <style>
+      html, body {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+      #tree {
+        display: flex;
+        flex-grow: 1;
+      }
+
+      .hpdev__select-tree {
+        background: #27292a;
+        padding: 20px;
+        font-size: 1rem;
+        flex-grow: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="tree"></div>
+    <script src="../dist/static/hierplane.bundle.js"></script>
+    <script src="sample-trees.js"></script>
+    <script>
+      let selectedTreeIdx = 0;
+      hpdev.renderSelectTreeUI(event => { renderTree(event.target.value) });
+
+      const containerId = 'tree';
+      const container = document.getElementById(containerId);
+
+      function renderTree(idx) {
+        if (container.firstElementChild) {
+          container.removeChild(container.firstElementChild);
+        }
+        hierplane.renderTree(hpdev.getTreeAtIdx(idx), { target: `#${containerId}` });
+      }
+
+      renderTree(0);
+    </script>
+  </body>
+</html>
