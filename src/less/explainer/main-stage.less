@@ -1,0 +1,80 @@
+#main-stage {
+  .u-w100;
+  .flex-container;
+  .u-select-none;
+  .flex-grow(1);
+  .fn-backface-visibility(hidden);
+  overflow: auto;
+  background: @main-stage-bg-color;
+  cursor: default;
+  position: relative;
+
+  .main-stage__loading-mask,
+  .main-stage__defocus-trigger {
+    .u-child100;
+  }
+
+  .main-stage__tree-container,
+  .main-stage__error-container {
+    padding: @node-word-margin;
+    margin: auto;
+  }
+
+  .main-stage__tree-container {
+    opacity: 0;
+    padding: (@node-word-margin * 6) @node-word-margin;
+  }
+
+  .main-stage__error-container,
+  .main-stage__tree-container.main-stage--rendered {
+    animation: content-fade .3s ease-in-out 1 forwards;
+  }
+
+  @keyframes content-fade {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+
+  &.main-stage--loading {
+    .main-stage__loading-mask {
+      .flex-container-centered;
+      z-index: 99999;
+
+      .main-stage__loading-mask__spinbox {
+        .u-child100;
+        .flex-container-centered;
+        animation: spinbox-fade .7s ease-in-out 1;
+      }
+
+      @keyframes spinbox-fade {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+      }
+    }
+
+    &.main-stage--fade-delay {
+      .main-stage__tree-container,
+      .main-stage__error-container {
+        animation: tree-fade-delay 4s ease-in-out 1 forwards;
+      }
+
+      @keyframes tree-fade-delay {
+        0% {opacity: 1;.fn-filter(blur(0/@em) contrast(1) brightness(1) grayscale(.5));}
+        15% {opacity: 1;.fn-filter(blur(1.5/@em) contrast(.8) brightness(.8) grayscale(.35));}
+        100% {opacity: .3;.fn-filter(blur(6/@em) contrast(.8) brightness(.8) grayscale(.35));}
+      }
+
+      .main-stage__loading-mask {
+        .main-stage__loading-mask__spinbox {
+          animation: spinbox-fade-slow 4s ease-in-out 1;
+        }
+
+        @keyframes spinbox-fade-slow {
+          0% {opacity: 0;}
+          15% {opacity: 0;}
+          100% {opacity: 1;}
+        }
+      }
+    }
+  }
+}

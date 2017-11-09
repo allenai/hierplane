@@ -1,0 +1,45 @@
+// MainStage Content
+.pane--fill {
+  .u-w100;
+  .flex-container-column;
+  flex: 2;
+}
+
+// MainStage Container
+.pane--scroll {
+  .pane--fill;
+  overflow: auto;
+}
+
+// SideBar
+.pane--right {
+  min-width: 280/@em;
+  max-width: 85%;
+  box-shadow: 0 0 10/@em rgba(0,0,0,.1);
+  opacity: 1;
+}
+
+.pane--autosnap {
+  transition: min-width .12s @node-transition-ease, width .12s @node-transition-ease, height .12s @node-transition-ease, opacity .06s @node-transition-ease;
+}
+
+.pane--collapsed {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.pane--right.pane--collapsed {
+  width: 0 !important;
+}
+
+.pane--moving {
+  &,
+  & * {
+    .u-select-none !important;
+  }
+  .pane__handler__thumb__highlight {
+    background-color: @focused-ui;
+  }
+}

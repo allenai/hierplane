@@ -1,0 +1,17 @@
+// Empty Pane treatment when nothing is focused
+
+.pane__empty {
+  .u-100;
+  .flex-container-centered;
+  line-height: 19/@em;
+  overflow: hidden;
+
+  span {
+    .u-nowrap;
+    .u-select-none;
+    cursor: default;
+    color: @pane-empty-text;
+    font-size: 13/@em;
+    text-align: center;
+  }
+}

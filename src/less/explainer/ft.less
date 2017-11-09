@@ -1,0 +1,76 @@
+// Faux Table
+
+.ft {
+  display: table;
+  margin-top: @node-word-margin;
+  height: 100%;
+}
+
+.ft__tr {
+  display: table-row;
+  height: 100%;
+}
+
+.ft__tr__td {
+  display: table-cell;
+  position: relative;
+  vertical-align: top;
+  text-align: center;
+  height: 100%;
+}
+
+.ft--middle-parent {
+  & > .node {
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &[data-has-side-children="true"] > .node__word {
+      height: 100%;
+    }
+  }
+}
+
+.ft--middle-children {
+  padding: 0 @node-word-margin;
+}
+
+.ft--left-children,
+.ft--root-event > .ft__tr > .ft--middle-children,
+.ft--right-children {
+  padding-bottom: @node-word-margin;
+}
+
+.ft--root-event + .ft--root-event {
+  margin-left: @node-word-margin * 2;
+}
+
+// Preventing extra space around side children.
+
+.ft--no-left-children {
+  margin-left: @node-word-margin;
+
+  & > .ft__tr {
+    & > .ft--middle-parent > .node {
+      margin-left: 0;
+    }
+
+    & > .ft--middle-children {
+      padding-left: 0;
+    }
+  }
+}
+
+.ft--no-right-children {
+  margin-right: @node-word-margin;
+
+  & > .ft__tr {
+    & > .ft--middle-parent > .node {
+      margin-right: 0;
+    }
+
+    & > .ft--middle-children {
+      padding-right: 0;
+    }
+  }
+}

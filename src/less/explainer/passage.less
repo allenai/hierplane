@@ -1,0 +1,368 @@
+#passage {
+  .u-w100;
+  .flex-container-centered;
+  .u-mp0;
+  z-index: 99;
+  min-height: 126/@em;
+  max-height: 200/@em;
+  height: 15%;
+  background: @passage-bg-color;
+  border: 2/@em solid @passage-border-color;
+  border-left-width: 0;
+  border-right-width: 0;
+  box-sizing: border-box;
+  position: relative;
+  overflow: auto;
+  transition: background-color @node-transition-duration @node-transition-ease,
+              border-color @node-transition-duration @node-transition-ease,
+              font-size .05s @node-transition-ease;
+
+  textarea,
+  p {
+    .u-mp0;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    color: @passage-text-color;
+    max-width: 100%;
+    padding: 20/@em 70/@em;
+    background: transparent;
+    margin: auto;
+  }
+
+  textarea,
+  p .passage__readonly {
+    line-height: 22/@em;
+    font-size: 30/@em;
+    transition: color @node-transition-duration @node-transition-ease;
+  }
+
+  p {
+    .u-w100;
+    .u-select-none;
+    position: relative;
+    cursor: default;
+
+    span {
+      display: inline-block;
+      transition: color .05s @node-transition-ease,
+                  background-color .05s @node-transition-ease,
+                  opacity .05s @node-transition-ease;
+    }
+
+    .passage__readonly {
+      &,
+      .span-slice__self,
+      .span-slice__ignored {
+        color: @passage-text-color;
+      }
+
+      .span-slice__self {
+        padding: 0 2.22/@em;
+      }
+
+      .span-slice__ignored {
+        margin-left: -2/@em;
+        margin-right: 2/@em;
+        z-index: 9;
+        position: relative;
+        cursor: default;
+      }
+
+      .span-slice {
+        display: inline;
+        padding: 3px 0; // Inline diplsay requires hard pixel value.
+        cursor: pointer;
+
+        &.span-slice--hover {
+          background: fade(lighten(@color0-focused, 15%), 20%);
+
+          span {
+            color: lighten(@passage-text-color, 20%);
+          }
+
+          & > span.span-slice__self {
+            background: fade(@color0-focused, 50%);
+            color: lighten(@passage-text-color, 60%);
+          }
+        }
+
+        &.span-slice--pressed.span-slice--hover {
+          background: darken(desaturate(@color0-focused, 82%), 31.5%);
+
+          span {
+            color: darken(@passage-text-color, 18%);
+          }
+
+          & > span.span-slice__self {
+            background: darken(desaturate(@color0-focused, 60%), 25%);
+          }
+        }
+
+        &.span-slice--focused {
+          & > span.span-slice__self {
+            background: @color0-focused;
+            color: @white;
+            box-shadow: 0 0 10/@em fade(@color0-focused, 40%);
+          }
+        }
+
+        // Span slice color overrides
+        &.span-slice--color1 {
+          &.span-slice--hover {
+            background: fade(lighten(@color1-focused, 15%), 20%);
+            & > span.span-slice__self {
+              background: fade(@color1-focused, 50%);
+            }
+          }
+
+          &.span-slice--pressed.span-slice--hover {
+            background: darken(desaturate(@color1-focused, 52%), 15%);
+            & > span.span-slice__self {
+              background: darken(desaturate(@color1-focused, 40%), 12%);
+            }
+          }
+
+          &.span-slice--focused > span.span-slice__self {
+            background: @color1-focused;
+            box-shadow: 0 0 10/@em fade(@color1-focused, 40%);
+          }
+        }
+
+        &.span-slice--color2 {
+          &.span-slice--hover {
+            background: fade(lighten(@color2-focused, 15%), 20%);
+            & > span.span-slice__self {
+              background: fade(@color2-focused, 50%);
+            }
+          }
+
+          &.span-slice--pressed.span-slice--hover {
+            background: darken(desaturate(@color2-focused, 82%), 31.5%);
+            & > span.span-slice__self {
+              background: darken(desaturate(@color2-focused, 60%), 25%);
+            }
+          }
+
+          &.span-slice--focused > span.span-slice__self {
+            background: @color2-focused;
+            box-shadow: 0 0 10/@em fade(@color2-focused, 40%);
+          }
+        }
+
+        &.span-slice--color3 {
+          &.span-slice--hover {
+            background: fade(lighten(@color3-focused, 15%), 20%);
+            & > span.span-slice__self {
+              background: fade(@color3-focused, 50%);
+            }
+          }
+
+          &.span-slice--pressed.span-slice--hover {
+            background: darken(desaturate(@color3-focused, 62%), 20%);
+            & > span.span-slice__self {
+              background: darken(desaturate(@color3-focused, 40%), 12%);
+            }
+          }
+
+          &.span-slice--focused > span.span-slice__self {
+            background: @color3-focused;
+            box-shadow: 0 0 10/@em fade(@color3-focused, 40%);
+          }
+        }
+
+        &.span-slice--color4 {
+          &.span-slice--hover {
+            background: fade(lighten(@color4-focused, 15%), 20%);
+            & > span.span-slice__self {
+              background: fade(@color4-focused, 50%);
+            }
+          }
+
+          &.span-slice--pressed.span-slice--hover {
+            background: darken(desaturate(@color4-focused, 62%), 20%);
+            & > span.span-slice__self {
+              background: darken(desaturate(@color4-focused, 40%), 12%);
+            }
+          }
+
+          &.span-slice--focused > span.span-slice__self {
+            background: @color4-focused;
+            box-shadow: 0 0 10/@em fade(@color4-focused, 40%);
+          }
+        }
+
+        &.span-slice--color5 {
+          &.span-slice--hover {
+            background: fade(lighten(@color5-focused, 15%), 20%);
+            & > span.span-slice__self {
+              background: fade(@color5-focused, 50%);
+            }
+          }
+
+          &.span-slice--pressed.span-slice--hover {
+            background: darken(desaturate(@color5-focused, 62%), 20%);
+            & > span.span-slice__self {
+              background: darken(desaturate(@color5-focused, 40%), 12%);
+            }
+          }
+
+          &.span-slice--focused > span.span-slice__self {
+            background: @color5-focused;
+            box-shadow: 0 0 10/@em fade(@color5-focused, 40%);
+          }
+        }
+
+        &.span-slice--color6 {
+          &.span-slice--hover {
+            background: fade(lighten(@color6-focused, 15%), 20%);
+            & > span.span-slice__self {
+              background: fade(@color6-focused, 50%);
+            }
+          }
+
+          &.span-slice--pressed.span-slice--hover {
+            background: darken(desaturate(@color6-focused, 62%), 20%);
+            & > span.span-slice__self {
+              background: darken(desaturate(@color6-focused, 40%), 12%);
+            }
+          }
+
+          &.span-slice--focused > span.span-slice__self {
+            background: @color6-focused;
+            box-shadow: 0 0 10/@em fade(@color6-focused, 40%);
+          }
+        }
+      }
+    }
+  }
+
+  textarea {
+    .u-100;
+    .u-appearance-none;
+    padding-left: 40/@em;
+    padding-right: 40/@em;
+    opacity: 0;
+    z-index: -9;
+    position: absolute;
+    border: none;
+    resize: none;
+    cursor: text;
+
+    &:focus {
+      color: @white;
+      outline: none;
+    }
+  }
+
+  &.passage--active {
+    background: darken(@passage-bg-color, .75%);
+
+    p .passage__readonly {
+      color: @passage-active-text-color;
+    }
+  }
+
+  .passage__focus-trigger {
+    .u-child100;
+    z-index: 0;
+  }
+
+  .passage__edit {
+    position: absolute;
+    cursor: pointer;
+    width: 16.8/@em; //56% of 30
+    height: 16.8/@em;  //56% of 30
+    margin-left: 0/@em;  //56% of 8
+    margin-top: -0.56/@em;
+    transition: z-index @node-transition-duration @node-transition-ease;
+
+    &,
+    & div {
+      display: inline-block;
+    }
+
+    .passage__edit__trigger {
+      transition: opacity @node-transition-duration @node-transition-ease;
+      opacity: 0;
+      width: 7.84/@em;  //56% of 14
+      height: 7.84/@em;  //56% of 14
+      fill: @white;
+    }
+
+    &:hover .passage__edit__trigger {
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+    .passage__edit {
+      .passage__edit__trigger {
+        opacity: .2;
+      }
+
+      &:hover .passage__edit__trigger {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.passage--editing {
+    background: @passage-edit-bg;
+    border-width: 2/@em;
+    border-color: @focused-ui;
+    cursor: text;
+    z-index: 1;
+
+    textarea {
+      position: static;
+      z-index: auto;
+      opacity: 1;
+    }
+
+    p {
+      opacity: 0;
+      z-index: -9;
+      position: absolute;
+    }
+
+    .passage__edit,
+    .passage__focus-trigger {
+      opacity: 0;
+      z-index: -9;
+    }
+  }
+
+  .passage__loading-mask {
+    .u-child100;
+    z-index: -9;
+    opacity: 0;
+    background: @passage-bg-color;
+    transition: opacity .2s ease-in-out, z-index .2s;
+  }
+
+  &.passage--loading {
+    .passage__loading-mask {
+      z-index: 9999;
+      opacity: .6;
+    }
+
+    .passage__edit {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  #passage {
+    font-size: 12/@em;
+
+    p {
+      .passage__readonly {
+        .span-slice {
+          padding: 2px 0;
+        }
+      }
+    }
+  }
+}
