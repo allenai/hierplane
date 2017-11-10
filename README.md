@@ -12,13 +12,13 @@ There are three ways to use `hierplane`:
 
 ### <a name="web"></a>In a web page:
 
-Add the following `<script>` tag to your webpage:
+Add the following `<script>` tag to your web page:
 
 ```
 <script src="//unpkg.com/hierplane/dist/static/hierplane.min.js"></script>
 ```
 
-Add the following styles to your webpage, likely in the `<head />` tag:
+Add the following styles to your web page, likely in the `<head />` tag:
 
 ```
 <link rel="stylesheet" type="text/css" href="//unpkg.com/hierplane/dist/static/hierplane.min.css">
@@ -30,43 +30,7 @@ Then invoke `hierplane.renderTree(tree[, target])` as is desired.
    - `target` *string* an optional css selector, speicfying the element into which the vizualization
      should be rendered. If not specified, the tree is rendered into the `<body />`.
 
-Here's a full example:
-
-```
-<!DOCTYPE html><html>
-  <head>
-    <title>Hierplane!</title>
-    <link rel="stylesheet" type="text/css" href="//unpkg.com/hierplane/dist/static/hierplane.min.css">
-  </head>
-  <body>
-    <script src="//unpkg.com/hierplane/dist/static/hierplane.min.js"></script>
-    <script>
-      const tree = {
-        text: 'Sam likes bananas',
-        root: {
-          nodeType: 'event',
-          word: 'like',
-          children: [
-            {
-              nodeType: 'entity',
-              word: 'Sam',
-              link: 'subject',
-              attributes: [ 'Person' ]
-            },
-            {
-              nodeType: 'entity',
-              word: 'banana',
-              link: 'object',
-              attributes: [ '>1']
-            }
-          ]
-        }
-      };
-      hierplane.renderTree(tree);
-    </script>
-  </body>
-</html>
-```
+You can see a full example [here](./EXAMPLES.md).
 
 ### <a name="web-react">In a web application that uses ReactJS:
 
@@ -114,7 +78,7 @@ To run the code locally and verify your changes, follow these steps:
 4. Run the `watch` target:
 
   ```
-  $ npm run start
+  $ npm start
   ```
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser of choice.
