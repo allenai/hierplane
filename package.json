@@ -10,6 +10,7 @@
   "scripts": {
     "build": "node ./bin/build.js",
     "watch": "node ./bin/build.js --watch",
+    "start": "node ./bin/build.js --server --watch",
     "prepublish": "npm run clean && NODE_ENV==production && npm run build",
     "test": "mocha --compilers js:babel-core/register 'src/**/*.test.js'",
     "clean": "rm -rf dist/"
@@ -51,9 +52,11 @@
     "chalk": "2.3.0",
     "chokidar": "1.7.0",
     "debounce": "1.1.0",
+    "express": "4.16.2",
     "less": "2.7.2",
     "less-plugin-clean-css": "1.5.1",
     "mocha": "3.2.0",
+    "morgan": "1.9.0",
     "npm-which": "3.0.1",
     "react": "15.3.0",
     "react-dom": "15.3.0",

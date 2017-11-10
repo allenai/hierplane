@@ -18,8 +18,8 @@ const which = require('npm-which')(execArgs.cwd);
 const args = new Set(process.argv.slice(2));
 if (args.has('-h') || args.has('--help')) {
   console.log('Usage: ./build.js [--watch|-w]')
-  console.log('  --watch  rebuild UI artifacts with every change to webui/webapp/app/**/*');
-  console.log('   -w      shorthand for --watch')
+  console.log('  --watch  -w  rebuild UI artifacts with every change to webui/webapp/app/**/*');
+  console.log('  --server -s  run a local server for development purposes');
   process.exit(0);
 }
 const isWatchTarget = args.has('--watch') || args.has('-w');
@@ -71,6 +71,10 @@ if (isWatchTarget) {
       // to stderr for us, so we don't need to output anything.
     }
   });
+}
+
+if (args.has('--server') || args.has('-s')) {
+  runLocalServer();
 }
 
 /**
@@ -163,5 +167,9 @@ function minifyJavascriptBundle() {
   console.log(chalk.green(
     `minified bundle written to ${chalk.magenta('dist/static/hierplane.bundle.min.js')}`
   ));
+}
+
+function runLocalServer() {
+  return cp.fork(path.resolve(__dirname, '..', 'dev', 'server.js'), execArgs);
 }
 

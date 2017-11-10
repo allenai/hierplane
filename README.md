@@ -68,7 +68,7 @@ Here's a full example:
 </html>
 ```
 
-### <a name="web-react">In a ReactJS based Web Application
+### <a name="web-react">In a web application that uses ReactJS
 
 Install the hierplane dependency:
 
@@ -90,3 +90,34 @@ class TreeContainer extends React.PureComponent {
   }
 }
 ```
+
+## Contributing
+
+To run the code locally and verify your changes, follow these steps:
+
+1. Clone the repository.
+
+  ```
+  $ git clone git@github.com:allenai/hierplane.git
+  ```
+
+2. Install [nodejs](https://nodejs.org/en/). This was built against version `v6.11.5`. You're free
+   to try something more recent.
+
+3. Install the dependencies:
+
+  ```
+  $ cd hierplane/
+  $ npm install
+  ```
+
+4. Run the `watch` target:
+
+  ```
+  $ npm run start
+  ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser of choice.
+
+If you want to change the port on which the webserver is bound, set the `HIERPLANE_DEV_SERVER_PORT`
+environment variable to one of your choosing.
