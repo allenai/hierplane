@@ -1,0 +1,33 @@
+<!DOCTYPE html><html>
+  <head>
+    <title>Static Hierplane</title>
+    <link rel="stylesheet" href="static/hierplane.min.css">
+    <style>
+      html, body {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+      #tree {
+        display: flex;
+        flex-grow: 1;
+      }
+
+      .hpdev__select-tree {
+        background: #27292a;
+        padding: 20px;
+        font-size: 1rem;
+        flex-grow: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="tree"></div>
+    <script src="static/hierplane.bundle.js"></script>
+    <script src="dev.js"></script>
+  </body>
+</html>

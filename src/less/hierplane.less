@@ -1,0 +1,84 @@
+/** Global variables */
+@base-font-size: 16px;
+@em: @base-font-size*1em;
+@rem: @base-font-size*1rem;
+@assets-path: "../assets/";
+@transition-duration: .2s;
+@transition-timing-function: ease;
+@transition-properties: @transition-duration @transition-timing-function;
+
+/**
+ * This scopes all hierplane styles so that they're rooted by `.hierplane`. This way we don't
+ * collide with class names used in the parent document.
+ *
+ * This doesn't, however, mean that styles applied by the user can't mutate those dictated by
+ * hierplane. If this provies to be an issue, we need to prefix each and every selector as to
+ * ensure they're as unique as possible.  I attempted to do this previously, but it proved
+ * to be extremely cumbersome.
+ */
+.hierplane {
+  .t-crisp;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  background: @gray-slate;
+  font-size: @base-font-size;
+  font-family: Oxygen, 'Helvetica Neue', Arial, sans-serif;
+  color: @white;
+
+  &,
+  .pane-container {
+    flex-grow: 1;
+  }
+
+  @import './functions.less';
+  @import './text.less';
+  @import './utils.less';
+  @import './colors.less';
+  @import './flex.less';
+  @import './toolbar.less';
+  @import './icons.less';
+
+  // Explainer Modules
+  @import './explainer/code.less';
+  @import './explainer/ft.less';
+  @import './explainer/loader.less';
+  @import './explainer/main-stage.less';
+  @import './explainer/meta-table.less';
+  @import './explainer/parse-error.less';
+  @import './explainer/parse-tree-toolbar.less';
+  @import './explainer/passage.less';
+  @import './explainer/tree-expansion-control.less';
+
+  // Explainer / Node Modules
+  @import './explainer/node/node_vars.less';
+  @import './explainer/node/node.less';
+  @import './explainer/node/node__word.less';
+  @import './explainer/node/node__word__attrs.less';
+  @import './explainer/node/node__word__label.less';
+  @import './explainer/node/node__word__link.less';
+  @import './explainer/node/node__word__tile.less';
+  @import './explainer/node/node__word__ui.less';
+  @import './explainer/node/node-children.less';
+  @import './explainer/node/node-focus-trigger.less';
+
+  // Explainer / Node Modifiers
+  @import './explainer/node/node--segments-container.less';
+  @import './explainer/node/node--seq.less';
+  @import './explainer/node/node_mod.less';
+  @import './explainer/node/node_pos.less';
+
+  // Explainer / Pane Modules
+  @import './explainer/pane/pane.less';
+  @import './explainer/pane/pane__alt-parse-nav.less';
+  @import './explainer/pane/pane__empty.less';
+  @import './explainer/pane/pane__handler.less';
+  @import './explainer/pane/pane__panel.less';
+  @import './explainer/pane/pane__fragments.less';
+  @import './explainer/pane/pane__toggle.less';
+  @import './explainer/pane/pane-container.less';
+
+  // Explainer / Pane Modifiers
+  @import './explainer/pane/pane_mod.less';
+
+}

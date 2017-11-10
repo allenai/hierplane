@@ -1,0 +1,53 @@
+// Resize Handler
+
+.pane__handler {
+  width: 12/@em;
+  height: 12/@em;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+
+  .pane__handler__thumb {
+    background: @pane-panel-separator;
+    width: 4/@em;
+    height: 4/@em;
+    margin: 4/@em;
+    position: absolute;
+
+    .pane__handler__thumb__highlight {
+      transition: background-color @node-transition-duration @node-transition-ease;
+      width: 2/@em;
+      height: 2/@em;
+      margin: 2/@em;
+    }
+  }
+
+  &:hover {
+    .pane__handler__thumb__highlight {
+      background: @focused-ui;
+    }
+  }
+}
+
+.pane__handler--vertical {
+  height: 100%;
+  margin-left: -4/@em;
+  margin-right: -4/@em;
+  cursor: ew-resize;
+  cursor: col-resize;
+
+  .pane__handler__thumb {
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    .pane__handler__thumb__highlight {
+      height: 100%;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}

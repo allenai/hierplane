@@ -1,0 +1,63 @@
+.node.node--segments-container {
+  margin-bottom: @node-word-margin * 2;
+
+  .node__segments {
+    .node-focus-trigger {
+      z-index: auto;
+    }
+
+    .node__word__ui--parse-nav {
+      .node__word__ui__glyph {
+        border: none;
+      }
+
+      .node__word__ui__glyph--left {
+        margin-right: 0;
+      }
+
+      .node__word__ui__glyph--right {
+        margin-left: 0;
+      }
+
+      .node__word__ui__glyph__svg {
+        opacity: 0;
+      }
+
+      .node__word__ui__glyph__svg--inverted {
+        opacity: 1;
+        fill: fade(@white, 27%);
+      }
+
+      .parse-nav-trigger-left:not(.node__word__ui--disabled),
+      .parse-nav-trigger-right:not(.node__word__ui--disabled) {
+        &:hover {
+          .node__word__ui__glyph {
+            background: none;
+            border: none;
+
+            .node__word__ui__glyph__svg--inverted {
+              fill: fade(@white, 50%);
+            }
+          }
+        }
+
+        &:active {
+          .node__word__ui__glyph {
+            opacity: .25;
+          }
+        }
+      }
+    }
+  }
+}
+
+.node.node--segments-container.node--has-alt-parses {
+  position: relative;
+  box-shadow: inset 0 0 0 2/@em fade(@white, 5.5%);
+  padding: 30/@em 30/@em 40/@em 30/@em;
+  margin: @node-word-margin (@node-word-margin * 2) (@node-word-margin * 2) (@node-word-margin * 2) !important;
+
+  &.node--focused {
+    box-shadow: inset 0 0 0 2/@em @focused-ui;
+  }
+}

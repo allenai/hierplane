@@ -1,0 +1,29 @@
+.loader {
+  .fn-transform(translateZ(0));
+  width: 60/@em;
+  height: 60/@em;
+  fill: fade(@orange, 80%);
+  -webkit-animation: euclid-spinner 1.1s infinite linear;
+  animation: euclid-spinner 1.1s infinite linear;
+  filter: drop-shadow(0 0 10/@em rgba(0,0,0,.7));
+}
+
+@-webkit-keyframes euclid-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes euclid-spinner {
+  0% {
+    .fn-transform(rotate(0deg));
+  }
+
+  100% {
+    .fn-transform(rotate(360deg));
+  }
+}

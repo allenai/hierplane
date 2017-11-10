@@ -1,0 +1,60 @@
+.pane__toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 34/@em;
+  height: 34/@em;
+  text-align: center;
+  line-height: 32/@em;
+  cursor: pointer;
+  transition: opacity .5s @node-transition-ease, background-color @transition-properties;
+
+  .pane__toggle__glyph {
+    display: inline-block;
+    fill: @white;
+    opacity: .4;
+    width: 10/@em;
+    height: 10/@em;
+    transition: opacity @transition-properties;
+  }
+
+  &:hover {
+    .pane__toggle__glyph {
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    .pane__toggle__glyph {
+      transition-duration: .05s;
+      opacity: .3;
+    }
+  }
+}
+
+.pane__toggle--sidebar {
+  z-index: -99;
+  opacity: 0;
+  transition-delay: 0s;
+  transition-duration: 0s;
+
+  .pane__toggle__glyph {
+    width: 16/@em;
+    height: 16/@em;
+  }
+}
+
+.pane__toggle--sidebar.pane__toggle--sidebar-collapsed {
+  z-index: 0;
+  transition-delay: .0  1s;
+  transition-duration: .5s;
+  opacity: 1;
+}
+
+.pane--collapsed {
+  .pane__toggle--close {
+    transition: opacity .05s @node-transition-ease;
+    opacity: 0;
+  }
+}

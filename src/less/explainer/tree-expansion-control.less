@@ -1,0 +1,131 @@
+.tree-expansion-control {
+  padding: 15/@em 8/@em;
+  position: relative;
+  z-index: 9;
+
+  .tree-expansion-control__glyph,
+  .tree-expansion-control__trigger {
+    position: relative;
+    width: 24/@em;
+    height: 24/@em;
+    opacity: .5;
+    transition: opacity @node-transition-duration @node-transition-ease;
+
+    .tree-expansion-control__glyph__triangle {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 4.273/@em solid transparent;
+      transition: border-color @transition-properties, transform @transition-properties, -webkit-transform @transition-properties;
+
+      &.tree-expansion-control__glyph__triangle--down {
+        border-bottom: none;
+        border-top-color: @white;
+      }
+
+      &.tree-expansion-control__glyph__triangle--up {
+        border-top: none;
+        border-bottom-color: @white;
+      }
+
+      &.tree-expansion-control__glyph__triangle--left {
+        border-left: none;
+        border-right-color: @white;
+      }
+
+      &.tree-expansion-control__glyph__triangle--right {
+        border-right: none;
+        border-left-color: @white;
+      }
+    }
+
+    &.tree-expansion-control__glyph--explode {
+      .fn-transform(rotate(45deg));
+
+      .tree-expansion-control__glyph__triangle--down {
+        top: 20.727/@em;
+        left: 7.727/@em;
+      }
+
+      .tree-expansion-control__glyph__triangle--up {
+        top: -1/@em;
+        left: 7.727/@em;
+      }
+
+      .tree-expansion-control__glyph__triangle--left {
+        top: 7.727/@em;
+        left: -1/@em;
+      }
+
+      .tree-expansion-control__glyph__triangle--right {
+        top: 7.727/@em;
+        left: 20.727/@em;
+      }
+    }
+
+    &.tree-expansion-control__glyph--implode {
+      .tree-expansion-control__glyph__triangle--down {
+        top: 1.369/@em;
+        left: 7.727/@em;
+      }
+
+      .tree-expansion-control__glyph__triangle--up {
+        top: 18.358/@em;
+        left: 7.727/@em;
+      }
+
+      .tree-expansion-control__glyph__triangle--left {
+        top: 7.727/@em;
+        left: 18.358/@em;
+      }
+
+      .tree-expansion-control__glyph__triangle--right {
+        top: 7.727/@em;
+        left: 1.369/@em;
+      }
+    }
+  }
+
+  &.tree-expansion-control:hover,
+  &.tree-expansion-control:active {
+    .tree-expansion-control__glyph {
+      .tree-expansion-control__glyph__triangle--down {
+        .fn-transform(translateY(2/@em));
+      }
+
+      .tree-expansion-control__glyph__triangle--up {
+        .fn-transform(translateY(-2/@em));
+      }
+
+      .tree-expansion-control__glyph__triangle--left {
+        .fn-transform(translateX(-2/@em));
+      }
+
+      .tree-expansion-control__glyph__triangle--right {
+        .fn-transform(translateX(2/@em));
+      }
+    }
+  }
+
+  &.tree-expansion-control:hover {
+    .tree-expansion-control__glyph {
+      opacity: 1;
+    }
+  }
+
+  &.tree-expansion-control:active {
+    .tree-expansion-control__glyph {
+      opacity: .2;
+      transition-duration: 0s;
+    }
+  }
+
+  .tree-expansion-control__trigger {
+    .u-100;
+    position: absolute;
+    z-index: 9;
+    top: 0/@em;
+    right: 0/@em;
+    cursor: pointer;
+  }
+}
