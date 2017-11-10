@@ -7,10 +7,10 @@ dependency parses.
 
 There are three ways to use `hierplane`:
 
-* [In a webpage, without dependencies](#web)
+* [In a web page, without dependencies](#web)
 * [In a web application that uses ReactJS](#web-react)
 
-### <a name="web"></a>In a Webpage:
+### <a name="web"></a>In a web page:
 
 Add the following `<script>` tag to your webpage:
 
@@ -68,7 +68,7 @@ Here's a full example:
 </html>
 ```
 
-### <a name="web-react">In a web application that uses ReactJS
+### <a name="web-react">In a web application that uses ReactJS:
 
 Install the hierplane dependency:
 
