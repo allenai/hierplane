@@ -1,0 +1,21 @@
+{
+  "text": "Sam likes bananas",
+  "root": {
+    "nodeType": "event",
+    "word": "like",
+    "children": [
+      {
+        "nodeType": "entity",
+        "word": "Sam",
+        "link": "subject",
+        "attributes": [ "Person" ]
+      },
+      {
+        "nodeType": "entity",
+        "word": "banana",
+        "link": "object",
+        "attributes": [ ">1"]
+      }
+    ]
+  }
+}
