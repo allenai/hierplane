@@ -17,22 +17,29 @@ const which = require('npm-which')(execArgs.cwd);
 // Argument parsing
 const args = new Set(process.argv.slice(2));
 if (args.has('-h') || args.has('--help')) {
-  console.log('Usage: ./build.js [--watch|-w]')
-  console.log('  --watch  -w  rebuild UI artifacts with every change to webui/webapp/app/**/*');
-  console.log('  --server -s  run a local server for development purposes');
+  console.log('Usage: ./build.js [OPTIONS]')
+  console.log('Options: ')
+  console.log('  --watch  -w          rebuild UI artifacts with every change to webui/webapp/app/**/*');
+  console.log('  --server -s          run a local server for development purposes');
+  console.log('  --skipInitial, -si   if specified with --watch, the first build is skipped');
   process.exit(0);
 }
 const isWatchTarget = args.has('--watch') || args.has('-w');
+const shouldSkipFirstBuild = isWatchTarget && (args.has('--skipInitial') || args.has('-si'));
 
 // Build n' bundle the JS and CSS
-compileJavascript();
-bundleJavascript();
-compileLess();
+if (!shouldSkipFirstBuild) {
+  compileJavascript();
+  bundleJavascript();
+  compileLess();
 
-// If we're building a production asset, minify the JS. We always minfiy the CSS given that
-// the web inspector makes it easy to debug the CSS rules that are applied.
-if (process.env.NODE_ENV === 'production') {
-  minifyJavascriptBundle();
+  // If we're building a production asset, minify the JS. We always minfiy the CSS given that
+  // the web inspector makes it easy to debug the CSS rules that are applied.
+  if (process.env.NODE_ENV === 'production') {
+    minifyJavascriptBundle();
+  }
+} else {
+  console.log(chalk.yellow('skipping first build, as --skipInitial was passed'));
 }
 
 // Local developers run the watch target, which watches the files in src/ for changes and updates
