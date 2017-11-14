@@ -34,7 +34,7 @@ class Tree extends Component {
       parser: 'default',
       tree: undefined,
       readOnly: true,
-      showSidebar: true
+      showSidebar: false
     };
   }
 
