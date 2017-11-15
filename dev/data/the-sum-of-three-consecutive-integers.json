@@ -11,6 +11,11 @@
           {
             "start": 42,
             "end": 46
+          },
+          {
+            "start": 46,
+            "end": 47,
+            "spanType": "ignored"
           }
         ],
         "children": [

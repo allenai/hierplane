@@ -220,5 +220,17 @@ describe('assignNodeIds', () => {
       };
       expect(translateSpans(treeWithSpans)).to.deep.equal(expectedTranslatedTree);
     });
+
+    it('preserves the type of a user provided span', () => {
+        const treeWithSpans = {
+          spans: [
+            { start: 10, end: 13 },
+            { start: 14, end: 15, spanType: 'ignored' }
+          ]
+        };
+        const { alternateParseInfo: { spanAnnotations } } = translateSpans(treeWithSpans);
+        expect(spanAnnotations[0].spanType).to.equal("self");
+        expect(spanAnnotations[1].spanType).to.equal("ignored");
+    });
   })
 });

@@ -155,7 +155,7 @@ export function translateSpans(origNode) {
           (node.spans || []).map(span => new Span(
             /* lo = */ span.start,
             /* hi = */ span.end,
-            /* spanType = */ 'self'
+            /* spanType = */ span.spanType || 'self'
           ))
         ).sort((first, second) => first.lo - second.lo);
 
