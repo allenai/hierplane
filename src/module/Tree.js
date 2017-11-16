@@ -109,10 +109,6 @@ class Tree extends Component {
     this.setCollapsible = this.setCollapsible.bind(this);
     this.populateData = this.populateData.bind(this);
     this.populateError = this.populateError.bind(this);
-
-    if (this.props.tree) {
-      this.props.tree.root = translateSpans(assignNodeIds(this.props.tree.root));
-    }
   }
 
   componentDidMount() {
@@ -241,6 +237,9 @@ class Tree extends Component {
       this.fetchData(fetchPath, "get", {}, false);
     } else {
       // Load static data
+      if (this.props.tree) {
+        this.props.tree.root = translateSpans(assignNodeIds(this.props.tree.root));
+      }
       const { fetchedData, selectedData } = this.sanitizeResponse(this.props.tree, false);
       this.populateData(fetchedData, "", selectedData);
     }
