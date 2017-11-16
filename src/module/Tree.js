@@ -136,11 +136,11 @@ class Tree extends Component {
     }
   }
 
-  componentWillReceiveProps({ urlText }) {
+  componentWillReceiveProps({ urlText, tree }) {
     const decoded = decodeURI(urlText);
 
     if (this.state.text !== decoded) {
-      this.fetchInitialParse(decoded);
+      this.fetchInitialParse(decoded, tree);
     }
   }
 
@@ -224,7 +224,7 @@ class Tree extends Component {
   }
 
   // Fetch initial parse (takes a query string encoded as a URI):
-  fetchInitialParse(q) {
+  fetchInitialParse(q, tree) {
     const prefix = "/api/fetchParse.json?text=";
     const fetchPath = prefix + q + "&parser=" + this.props.parser;
     this.setState({
@@ -237,10 +237,11 @@ class Tree extends Component {
       this.fetchData(fetchPath, "get", {}, false);
     } else {
       // Load static data
-      if (this.props.tree) {
-        this.props.tree.root = translateSpans(assignNodeIds(this.props.tree.root));
+      const staticTree = tree || this.props.tree;
+      if (staticTree) {
+        staticTree.root = translateSpans(assignNodeIds(staticTree.root));
       }
-      const { fetchedData, selectedData } = this.sanitizeResponse(this.props.tree, false);
+      const { fetchedData, selectedData } = this.sanitizeResponse(staticTree, false);
       this.populateData(fetchedData, "", selectedData);
     }
   }
