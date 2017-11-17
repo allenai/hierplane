@@ -23,24 +23,24 @@
   }
 }
 
-// // Display faux-tree if mobile real estate
-// @media screen and (max-width:680*$rem) {
-//   #tree {
-//     min-height: 0;
-//     height: 66.764706vw;
-//     background: $gray-darker url(../assets/tree-static.jpg) center top / 100% auto no-repeat;
-//     .hierplane {
-//       display: none;
-//     }
-//   }
-// }
-//
-// // Retina Faux-tree
-// @media all and (max-width:680*$rem) and (-webkit-min-device-pixel-ratio : 1.5),
-//  all and (-o-min-device-pixel-ratio: 3/2),
-//  all and (min--moz-device-pixel-ratio: 1.5),
-//  all and (min-device-pixel-ratio: 1.5) {
-//   #tree {
-//     background-image: url(../assets/tree-static@2x.jpg);
-//   }
-// }
+// Display faux-tree if mobile real estate
+@media screen and (max-width:680*$rem) {
+  #tree {
+    min-height: 0;
+    height: 66.764706vw;
+    background: $gray-darker url(../assets/tree-static.jpg) center top / 100% auto no-repeat;
+    .hierplane {
+      display: none;
+    }
+  }
+}
+
+// Retina Faux-tree
+@media all and (max-width:680*$rem) and (-webkit-min-device-pixel-ratio : 1.5),
+ all and (-o-min-device-pixel-ratio: 3/2),
+ all and (min--moz-device-pixel-ratio: 1.5),
+ all and (min-device-pixel-ratio: 1.5) {
+  #tree {
+    background-image: url(../assets/tree-static@2x.jpg);
+  }
+}
