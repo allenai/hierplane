@@ -1,32 +1,27 @@
 ---
 ---
 
-html {
-  background: white;
-}
+// Vendor Modules
+@import "vendor/pure-custom-min"; // Pure Resonsive Grid
+@import "vendor/hljs"; // Highlight JS theme
 
-//
-// // Vendor Modules
-// @import "vendor/pure-custom-min"; // Pure Resonsive Grid
-// @import "vendor/hljs"; // Highlight JS theme
-//
-// // Hierplane Var & Mixin Modules
-// @import "colors";
-// @import "mixins";
-// @import "vars";
-//
-// // Hierplane Style Modules
-// @import "base";
-// @import "bg";
-// @import "btn";
-// @import "features";
-// @import "footer";
-// @import "header";
-// @import "intro";
-// @import "link";
-// @import "logo";
-// @import "nav";
-// @import "section";
-// @import "svg";
-// @import "tree";
-// @import "tutorial";
+// Hierplane Var & Mixin Modules
+@import "colors";
+@import "mixins";
+@import "vars";
+
+// Hierplane Style Modules
+@import "base";
+@import "bg";
+@import "btn";
+@import "features";
+@import "footer";
+@import "header";
+@import "intro";
+@import "link";
+@import "logo";
+@import "nav";
+@import "section";
+@import "svg";
+@import "tree";
+@import "tutorial";
