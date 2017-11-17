@@ -1,5 +1,5 @@
 // Hero Tree Example data
-const tree = {
+const treeData = {
   "text": "Hierplane is a great tool for visualizing linguistic structures. Try it for yourself!",
   "nodeTypeToStyle": {
     "top-level-and": ["node--segments-container"],
@@ -305,8 +305,44 @@ const tree = {
     }]
   }
 };
-// Initialize Hierplane Hero Tree
-hierplane.renderTree(tree, { target: "#tree" });
+
+// Testing if page width is mobile size.
+function testWidth() {
+  const breakPoint = 680,
+        treeContainer = document.getElementById("tree"),
+        trees = document.getElementsByClassName("hierplane");
+
+  // If desktop screen width:
+  if (window.innerWidth >= breakPoint) {
+    // If no trees exist
+    if (trees.length === 0) {
+      // Initialize Hierplane
+      hierplane.renderTree(treeData, { target: "#tree" });
+    }
+    // If #tree container has mobile class
+    if (tree.classList.contains("mobile")) {
+      // Remove mobile class
+      treeContainer.classList.remove("mobile");
+    }
+  // Otherwise, if mobile screen width:
+  } else {
+    // Loop through .hierplane instances
+    while(trees[0]) {
+      // Remove each .hierplane
+      trees[0].parentNode.removeChild(trees[0]);
+    }
+    // Add mobile class
+    treeContainer.classList.add("mobile");
+  }
+}
+
+// On load
+testWidth();
+
+// On resize
+window.addEventListener("resize", function() {
+  testWidth();
+});
 
 // Initialize Syntax Highlighting
 hljs.initHighlightingOnLoad();

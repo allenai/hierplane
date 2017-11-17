@@ -38,10 +38,23 @@
 }
 
 .intro__cta {
+  width: 100%;
+  justify-content: center;
   display: flex;
   margin-top: $margin-3;
 
   .btn + .btn {
     margin-left: $margin;
+  }
+}
+
+@media screen and (max-width:640*$rem) {
+  .intro {
+    .logo {
+      .logo__svg {
+        width: 270*$rem;
+        height: 56*$rem;
+      }
+    }
   }
 }

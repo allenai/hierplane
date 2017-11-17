@@ -1,3 +1,5 @@
+// Highlight JS theme
+
 /*
 
 Atom One Dark by Daniel Gamage
@@ -18,28 +20,13 @@ hue-6-2: $code-green
 
 */
 
-/*
-
-Modified by Aaron Sarnat to use Hierplane colors.
-
-*/
-
-
-// Syntax Highlighting Colors
-$code-silver:       #bac6ce;  // Default
-$code-red:          #f0879e;
-$code-green:        #9dd082;
-$code-blue:         #9bc6e2;
-$code-yellow:       #f2e4a0;
-$code-purple:       #d394ea;
-
+// Modified by Aaron Sarnat to use Hierplane colors.
 
 .hljs {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
   color: $code-silver;
-  //background: #282c34;
 }
 
 .hljs-comment,

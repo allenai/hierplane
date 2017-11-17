@@ -89,11 +89,11 @@
 }
 
 .section__content--md {
-  max-width: 668*$rem;
+  max-width: 700*$rem;
 }
 
 .section__content--sm {
-  max-width: 460*$rem;
+  max-width: 520*$rem;
 }
 
 .section__content--reversed-text {
@@ -120,5 +120,11 @@
 
   .svg--blue.svg--reversable {
     fill: $blue-light;
+  }
+}
+
+@media screen and (max-width:960*$rem) {
+  .section__content {
+    padding: $margin-3 $margin;
   }
 }

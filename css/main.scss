@@ -1,10 +1,5 @@
 ---
 ---
-
-// Vendor Modules
-@import "vendor/pure-custom-min"; // Pure Resonsive Grid
-@import "vendor/hljs"; // Highlight JS theme
-
 // Hierplane Var & Mixin Modules
 @import "colors";
 @import "mixins";
@@ -17,6 +12,7 @@
 @import "features";
 @import "footer";
 @import "header";
+@import "hljs";
 @import "intro";
 @import "link";
 @import "logo";

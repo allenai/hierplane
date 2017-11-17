@@ -1,6 +1,7 @@
 .btn {
   display: block;
-  min-width: 170*$rem;
+  width: 100%;
+  max-width: 170*$rem;
   font-size: 15*$rem;
   font-weight: 500;
   color: $gray-darker;
