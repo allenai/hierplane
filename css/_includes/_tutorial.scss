@@ -33,10 +33,11 @@
 
   pre {
     background: $gray-darker;
-    padding: ($margin + $margin-half) ($margin-3q + $margin-half);
+    padding: ($margin + $margin-4th) 0 ($margin + $margin-4th) ($margin-3q + $margin-half);
 
     code {
       font-size: 16*$rem;
+      line-height: 20*$rem;
       padding: 0;
       background: transparent;
     }
