@@ -1,0 +1,88 @@
+.tutorial {
+  h3,
+  .tutorial__steps li:before {
+    color: $gray-darker;
+    font-size: 21*$rem;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  h3 {
+    margin-bottom: $margin-2;
+  }
+
+  p {
+    font-size: 16*$rem;
+    line-height: 24*$rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  code {
+    @include smooth;
+    background: fade-out($gray-darker, 0.9);
+    font-size: 15*$rem;
+    padding: 3*$rem 5*$rem;
+  }
+
+  pre {
+    background: $gray-darker;
+    padding: ($margin + $margin-half) ($margin-3q + $margin-half);
+
+    code {
+      font-size: 16*$rem;
+      padding: 0;
+      background: transparent;
+    }
+  }
+}
+
+.tutorial__steps {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: counter;
+
+  & > li {
+    position: relative;
+    padding-left: $margin + $margin-half;
+    margin-top: $margin-2;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:before {
+      content: counter(counter) ". ";
+      counter-increment: counter;
+      position: absolute;
+      left: 0;
+    }
+
+    pre {
+      margin-left: -($margin + $margin-half);
+      margin-top: $margin;
+    }
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  ul,
+  ol {
+    padding-left: $margin;
+
+    li {
+      font-size: 16*$rem;
+      line-height: 24*$rem;
+    }
+  }
+}

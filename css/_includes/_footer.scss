@@ -1,0 +1,63 @@
+.footer {
+  min-height: 146*$rem;
+
+  .section__content {
+    max-width: 99vw;
+    display: flex;
+    padding: $margin-3 $margin-3q * 2;
+  }
+
+  .logo {
+    width: 154*$rem;
+    height: 32*$rem;
+  }
+
+  .footer__nav {
+    height: 32*$rem;
+    display: block;
+    margin-left: $margin + $margin-half;
+
+    .nav__list {
+      .nav__item {
+        a,
+        a.nav__item--active {
+          span {
+            color: $gray-medium;
+            @include crisp;
+          }
+
+          &:hover {
+            span {
+              color: $white;
+            }
+          }
+
+          &.nav__item--active:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .footer__copyright {
+    font-size: 12*$rem;
+    color: $gray-medium-dark;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+
+    .footer__builtby {
+      color: $gray-medium;
+      padding-right: 3*$rem;
+
+      .link {
+        color: $gray-medium;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}

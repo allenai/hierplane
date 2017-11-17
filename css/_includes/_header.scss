@@ -1,0 +1,28 @@
+.header {
+  height: $margin-4;
+  position: relative;
+  z-index: 2;
+  padding: 0;
+  box-shadow: 0 0 $margin fade-in($gray-very-dark, 0.5);
+  background: $white;
+
+  .section__content {
+    max-width: 99vw;
+    padding: 0 $margin-3q 0 $margin-3q * 2;
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+    align-items: center;
+  }
+
+  .logo {
+    width: 154*$rem;
+    height: 32*$rem;
+  }
+
+  .header__nav {
+    margin-left: auto;
+    height: 100%;
+    display: block;
+  }
+}

@@ -1,0 +1,15 @@
+.link {
+  color: $blue;
+  font-weight: 500;
+  transition: color $trans-props,
+              opacity $trans-props;
+
+  &:hover {
+    color: $blue-light;
+  }
+
+  &:active {
+    opacity: 0.5;
+    transition-duration: 0s;
+  }
+}

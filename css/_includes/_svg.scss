@@ -1,0 +1,44 @@
+.svg--sprite {
+  display: none;
+  pointer-events: none;
+}
+
+.svg--translucent {
+  opacity: 0.33;
+}
+
+.svg--gray-darker {
+  fill: $gray-darker;
+}
+
+.svg--gray-dark {
+  fill: $gray-dark;
+}
+
+.svg--gray-medium-dark {
+  fill: $gray-medium-dark;
+}
+
+.svg--gray-medium {
+  fill: $gray-medium;
+}
+
+.svg--gray-light {
+  fill: $gray-light;
+}
+
+.svg--white {
+  fill: $white;
+}
+
+.svg--blue {
+  fill: $blue;
+}
+
+.svg--blue-light {
+  fill: $blue-light;
+}
+
+.svg--blue-lighter {
+  fill: $blue-lighter;
+}

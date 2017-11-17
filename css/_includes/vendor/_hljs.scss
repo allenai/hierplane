@@ -1,0 +1,112 @@
+/*
+
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  $code-silver
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   $code-yellow
+hue-2:   #61aeee
+hue-3:   $code-purple
+hue-4:   $code-blue
+hue-5:   $code-red
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: $code-green
+
+*/
+
+/*
+
+Modified by Aaron Sarnat to use Hierplane colors.
+
+*/
+
+
+// Syntax Highlighting Colors
+$code-silver:       #bac6ce;  // Default
+$code-red:          #f0879e;
+$code-green:        #9dd082;
+$code-blue:         #9bc6e2;
+$code-yellow:       #f2e4a0;
+$code-purple:       #d394ea;
+
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: $code-silver;
+  //background: #282c34;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic;
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: $code-purple;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: $code-red;
+}
+
+.hljs-literal {
+  color: $code-yellow;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: $code-blue;
+}
+
+.hljs-attr,
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: $code-green;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}

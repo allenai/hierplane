@@ -1,0 +1,12 @@
+<header class="header section">
+  <div class="section__content">
+    {% if include.logo != "hide" %}
+      <a {% include url/url-home.html %}>
+        {% include logo.html %}
+      </a>
+    {% endif %}
+    <nav class="header__nav">
+      {% include nav.html %}
+    </nav>
+  </div>
+</header>

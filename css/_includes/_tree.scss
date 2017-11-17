@@ -1,0 +1,8 @@
+#tree {
+  min-height: 480*$rem;
+  background: $gray-darker;
+  box-shadow: 0 $margin 80*$rem fade-out($gray-darker, 0.85),
+              0 2*$rem 4*$rem fade-out($gray-darker, 0.75);
+  position: relative;
+  z-index: 1;
+}

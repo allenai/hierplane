@@ -1,0 +1,20 @@
+// px -> rem conversion
+$rem: 1 / 16 * 1rem;
+
+// Media Query breakpoints
+$page-width-sm: 568*$rem;
+$page-width-md: 768*$rem;
+$page-width-lg: 1024*$rem;
+$page-width-xl: 1280*$rem;
+
+// Standard Margins
+$margin: 20*$rem;
+$margin-2: $margin * 2;
+$margin-3: $margin * 3;
+$margin-4: $margin * 4;
+$margin-3rd: $margin / 3;
+$margin-half: $margin / 2;
+$margin-3q: $margin * 3 / 4;
+
+// Transition Vars
+$trans-props: 0.1s ease-in-out;

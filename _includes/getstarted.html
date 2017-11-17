@@ -1,0 +1,57 @@
+<!-- Get Started Intro -->
+<section id="getstarted" class="section bg--gray-very-light">
+  <div class="section__content section__content--centered section__content--sm">
+    <h3 class="section__heading">Get Started</h3>
+    <p>For detailed instructions and code examples, check out the <a class="link" {% include url/url-github.html %}>Hierplane documentation on GitHub.</a></p>
+  </div>
+</section>
+
+<!-- Web Without Dependencies -->
+<section class="section tutorial bg--gray-lighter">
+  <div class="section__content section__content--lg">
+    <h3>Using Hierplane in a web page without dependencies</h3>
+    <ol class="tutorial__steps">
+      <li>
+        <p>Add the following <code>&lt;script&gt;</code> tag to your web page</p>
+        <pre><code class="hljs html">&lt;script src="//unpkg.com/hierplane/dist/static/hierplane.min.js"&gt;&lt;/script&gt;</code></pre>
+      </li>
+      <li>
+        <p>Add the following styles to your web page, likely in the <code>&lt;head /&gt;</code> tag</p>
+        <pre><code class="hljs html">&lt;link rel="stylesheet" type="text/css" href="//unpkg.com/hierplane/dist/static/hierplane.min.css"&gt;</code></pre>
+      </li>
+      <li>
+        <p>Then invoke <code>hierplane.renderTree(tree[, target])</code> as is desired.</p>
+        <ul>
+          <li><code>tree</code> <em>object</em> the tree to visualize.</li>
+          <li><code>target</code> <em>string</em> an optional css selector, speicfying the element into which the vizualization should be rendered. If not specified, the tree is rendered into the <code>&lt;body /&gt;</code>.</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ReactJS Web App -->
+<section class="section tutorial bg--gray-very-light">
+  <div class="section__content section__content--lg">
+    <h3>Using Hierplane in a ReactJS web application</h3>
+    <ol class="tutorial__steps">
+      <li>
+        <p>Install the hierplane dependency.</p>
+        <pre><code class="hljs no-highlight">npm install --save hierplane</code></pre>
+      </li>
+      <li>
+        <p>Then, simply import the <code>Tree</code> component, and pass it the tree you'd like to render:</p>
+        <pre><code class="hljs jsx">import { Tree } from 'hierplane';
+import React from 'react';
+
+const aTree = { ... };
+
+class TreeContainer extends React.PureComponent {
+  render() {
+    return &lt;Tree tree={aTree} /&gt;;
+  }
+}</code></pre>
+      </li>
+    </ol>
+  </div>
+</section>
