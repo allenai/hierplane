@@ -3,7 +3,7 @@
   position: relative;
   z-index: 2;
   padding: 0;
-  box-shadow: 0 0 $margin fade-in($gray-very-dark, 0.5);
+  box-shadow: 0 0 $margin fade-out($gray-very-dark, 0.75);
   background: $white;
 
   .section__content {
