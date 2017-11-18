@@ -1,5 +1,5 @@
 // Hero Tree Example data
-const treeData = {
+const introData = {
   "text": "Hierplane is a great tool for visualizing linguistic structures. Try it for yourself!",
   "nodeTypeToStyle": {
     "top-level-and": ["node--segments-container"],

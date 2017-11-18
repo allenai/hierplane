@@ -9,7 +9,9 @@
   <body data-page="demo">
     {% include header.html %}
     {% include examples.html %}
-    {% include footer.html %}
     {% include scripts.html %}
+    <script>
+      hierplane.renderTree(exampleData, { target: "#examples__content" });
+    </script>
   </body>
 </html>

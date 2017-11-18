@@ -7,9 +7,9 @@ function testPageWidth() {
   // If desktop screen width:
   if (window.innerWidth >= breakPoint) {
     // If no trees exist
-    if (trees.length === 0) {
+    if (trees.length === 0 && pageId === "home") {
       // Initialize Hierplane with data (see treeData.js)
-      hierplane.renderTree(treeData, { target: "#tree" });
+      hierplane.renderTree(introData, { target: "#tree" });
     }
     // If #tree container has mobile class
     if (tree.classList.contains("mobile")) {
