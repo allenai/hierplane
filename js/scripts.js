@@ -28,7 +28,20 @@ function testPageWidth() {
   }
 }
 
-// On load
+// Adding nav selection if link matches page
+function matchPage(e) {
+  if (e.getAttribute("data-page") === pageId) {
+    e.classList.add("nav__item--active");
+  }
+}
+
+// Set pageId and call matchPage
+const navLinks = Array.prototype.slice.call(document.querySelectorAll(".header__nav .nav__item[data-page]"));
+if (document.body.hasAttribute("data-page")) {
+  pageId = document.body.getAttribute("data-page");
+  navLinks.forEach(matchPage);
+}
+
 testPageWidth();
 // Initialize Syntax Highlighting
 hljs.initHighlightingOnLoad();

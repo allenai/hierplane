@@ -32,8 +32,10 @@
               color: $white;
             }
           }
+        }
 
-          &.nav__item--active:after {
+        &.nav__item--active {
+          a:after {
             display: none;
           }
         }
