@@ -50,6 +50,13 @@
 
 @media screen and (max-width:640*$rem) {
   .intro {
+    .header {
+      .header__nav {
+        margin-bottom: $margin-2;
+        margin-top: $margin-3;
+      }
+    }
+
     .logo {
       .logo__svg {
         width: 270*$rem;
