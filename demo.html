@@ -7,8 +7,10 @@
     <title>Hierplane</title>
   </head>
   <body data-page="demo">
-    {% include header.html %}
-    {% include examples.html %}
+    <section id="examples">
+      {% include header.html %}
+      {% include examples.html %}
+    </section>
     {% include scripts.html %}
     <script>
       hierplane.renderTree(exampleData, { target: "#examples__content" });
