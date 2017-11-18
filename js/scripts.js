@@ -51,12 +51,6 @@ window.addEventListener("resize", function() {
   testPageWidth();
 });
 
-// Animate anchor scrolling w/ ease
-const scroll = new SmoothScroll('a.js-scroll[href*="#"]', {
-  speed: 300,
-  easing: "easeInOutQuint"
-});
-
 // Toggle MOW menu
 let mowActive = false;
 const headerNav = document.querySelector(".header__nav"),
