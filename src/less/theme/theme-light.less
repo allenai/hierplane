@@ -1,0 +1,489 @@
+// Begin Theme-specific Overrides
+.hierplane--theme-light {
+  // Theme-specific Colors:
+
+  // Node tile background colors
+  @theme-light-color0: lighten(desaturate(#999a9d, 5%), 5%);
+  @theme-light-color1: lighten(desaturate(#9ed084, 5%), 5%);
+  @theme-light-color2: lighten(desaturate(#9ac5e2, 5%), 5%);
+  @theme-light-color3: lighten(desaturate(#ef859c, 5%), 5%);
+  @theme-light-color4: lighten(desaturate(#e5d594, 5%), 5%);
+  @theme-light-color5: lighten(desaturate(#e991e8, 5%), 5%);
+  @theme-light-color6: lighten(desaturate(#8bd6db, 5%), 5%);
+  @theme-light-color0-focused: lighten(desaturate(fade(#a7a7a7, 50%), 5%), 5%);
+  @theme-light-color1-focused: lighten(desaturate(#489b36, 5%), 5%);
+  @theme-light-color2-focused: lighten(desaturate(#167afb, 5%), 5%);
+  @theme-light-color3-focused: lighten(desaturate(#d21e45, 5%), 5%);
+  @theme-light-color4-focused: lighten(desaturate(#b68309, 5%), 5%);
+  @theme-light-color5-focused: lighten(desaturate(#cb21c9, 5%), 5%);
+  @theme-light-color6-focused: lighten(desaturate(#0092a3, 5%), 5%);
+  @theme-light-white: #fff;
+  @theme-light-black: #000;
+
+  // Misc node content colors
+  @theme-light-border-color: #aaaaaa;
+  @theme-light-link-bg-color: #f6f6f6;
+  @theme-light-attr-bg-color: rgba(0,0,0,.25);
+  @theme-light-node-container-active: fade(@theme-light-black, 2%);
+  //@theme-light-hover-accent: fade(darken(#0a22ee, 20%), 66%);
+  @theme-light-hover-accent: #0000f2;
+
+  // Passage Colors
+  @theme-light-passage-text-color: #666;
+  @theme-light-passage-border-color: #eee;
+  @theme-light-passage-focused: @theme-light-white;
+
+  // toolbar
+  @theme-light-toolbar-bg: #f9fafc;
+  @theme-light-toolbar-ui: @theme-light-black;
+
+  // Theme-specific Less functions
+  .theme-light-fn-bg(@v) {
+    background: lighten(@v, 15%);
+
+    &:after {
+      background: lighten(@v, 20%);
+    }
+  }
+
+  .theme-light-fn-focused-bg(@v) {
+    background: lighten(@v, 15%) !important;
+  }
+
+  .theme-light-fn-transform(@v) {
+    -webkit-transform: @v;
+    -ms-transform: @v;
+    transform: @v;
+  }
+
+  // Forcing all background containers to render transparent bg color
+  &,
+  .pane,
+  #passage,
+  #main-stage {
+    background: transparent;
+  }
+
+  // Disabling node shadows, making nodes look more boxy
+  .node__word__tile {
+    box-shadow: none;
+    border: 1/@em solid @theme-light-border-color;
+    border-radius: 2/@em;
+  }
+
+  // Disabling link tab shadows, overriding link colors
+  .node__word__link {
+    .node__word__link__tab {
+      filter: none;
+    }
+
+    .node__word__link__tab__svg__fill {
+      fill: @theme-light-link-bg-color;
+    }
+
+    .node__word__link__tab__svg__stroke {
+      stroke: @theme-light-border-color;
+    }
+
+    .node__word__link__label {
+      background: @theme-light-link-bg-color;
+      border-color: @theme-light-border-color !important;
+    }
+  }
+
+  // Disabling directional link tab shadows
+  .default .node[data-pos='left']:not(.node--encapsulated) >.node__word > .node__word__link .node__word__link__tab,
+  .default .node[data-pos='right']:not(.node--encapsulated) >.node__word > .node__word__link .node__word__link__tab,
+  .default .node[data-pos='inside'] > .node__word > .node__word__link .node__word__link__tab {
+    filter: none !important;
+  }
+
+  // Overriding link offsets
+  .default .node[data-pos='left']:not(.node--encapsulated) > .node__word > .node__word__link {
+    .theme-light-fn-transform(translateX(10/@em + (2/@em / 2) - 1/@em));
+  }
+  .default .node[data-pos='right']:not(.node--encapsulated) > .node__word > .node__word__link {
+    .theme-light-fn-transform(translateX(-10/@em - (2/@em / 2) + 1/@em));
+  }
+  .node[data-pos='down'] > .node__word > .node__word__link {
+    .theme-light-fn-transform(translateY(-10/@em - (2/@em / 2) + 1/@em));
+  }
+
+  // Disabling node word text shadow
+  .node__word__label .node__word__label__headword {
+    text-shadow: none;
+  }
+
+  // Overriding Attribute background color
+  .node__word__attrs {
+    .node__word__attrs__item {
+      background: @theme-light-attr-bg-color;
+    }
+  }
+
+  // Replacing node background gradients with solid colors
+  .node--color0 > .node__word > .node__word__tile {.theme-light-fn-bg(@theme-light-color0)}
+  .node--color1 > .node__word > .node__word__tile {.theme-light-fn-bg(@theme-light-color1)}
+  .node--color2 > .node__word > .node__word__tile {.theme-light-fn-bg(@theme-light-color2)}
+  .node--color3 > .node__word > .node__word__tile {.theme-light-fn-bg(@theme-light-color3)}
+  .node--color4 > .node__word > .node__word__tile {.theme-light-fn-bg(@theme-light-color4)}
+  .node--color5 > .node__word > .node__word__tile {.theme-light-fn-bg(@theme-light-color5)}
+  .node--color6 > .node__word > .node__word__tile {.theme-light-fn-bg(@theme-light-color6)}
+
+  // Node Hover State
+  .node--hover {
+    & > .node__word {
+      & > .node__word__tile {
+        border-color: lighten(desaturate(@theme-light-hover-accent, 60%), 30%);
+      }
+
+      & > .node__word__content > .node__word__label {
+        span {
+          color: desaturate(@theme-light-hover-accent, 66%);
+        }
+
+        span.node__word__label__rollup {
+          color: fade(desaturate(@theme-light-hover-accent, 66%), 53%);
+
+          strong {
+            color: desaturate(@theme-light-hover-accent, 66%);
+          }
+        }
+      }
+
+      & > .node__word__content > .node__word__attrs > .node__word__attrs__item {
+        background: fade(lighten(desaturate(@theme-light-hover-accent, 60%), 30%), 70%);
+      }
+
+      & > .node__word__ui .node__word__ui__glyph {
+        border-color: lighten(desaturate(@theme-light-hover-accent, 60%), 30%);
+
+        .node__word__ui__glyph__svg {
+          fill: fade(lighten(desaturate(@theme-light-hover-accent, 60%), 30%), 50%);
+        }
+      }
+    }
+  }
+
+  // Replacing focused node background gradients with solid colors, disabling focused drop shadows
+  .node--focused {
+    &,
+    &.node--hover {
+      & > .node__word > .node__word__tile,
+      &.node--color0 > .node__word > .node__word__tile {.theme-light-fn-focused-bg(@theme-light-color0-focused)}
+      &.node--color1 > .node__word > .node__word__tile {.theme-light-fn-focused-bg(@theme-light-color1-focused)}
+      &.node--color2 > .node__word > .node__word__tile {.theme-light-fn-focused-bg(@theme-light-color2-focused)}
+      &.node--color3 > .node__word > .node__word__tile {.theme-light-fn-focused-bg(@theme-light-color3-focused)}
+      &.node--color4 > .node__word > .node__word__tile {.theme-light-fn-focused-bg(@theme-light-color4-focused)}
+      &.node--color5 > .node__word > .node__word__tile {.theme-light-fn-focused-bg(@theme-light-color5-focused)}
+      &.node--color6 > .node__word > .node__word__tile {.theme-light-fn-focused-bg(@theme-light-color6-focused)}
+    }
+
+    & > .node__word {
+      & > .node__word__tile {
+        box-shadow: none !important;
+      }
+
+      & > .node__word__content > .node__word__attrs > .node__word__attrs__item {
+        background: fade(@theme-light-white, 70%);
+
+        span {
+          color: @theme-light-color0-focused;
+        }
+      }
+
+      & > .node__word__ui .node__word__ui__glyph {
+        border-color: fade(@theme-light-white, 50%);
+
+        .node__word__ui__glyph__svg {
+          fill: fade(@theme-light-white, 50%);
+        }
+      }
+
+      & > .node__word__ui--toggle:not(.node__word__ui--disabled) {
+        &:hover {
+          .node__word__ui__glyph {
+            background: fade(@theme-light-white, 10%);
+            border-color: fade(@theme-light-white, 60%);
+
+            .node__word__ui__glyph__svg {
+              fill: fade(@theme-light-white, 75%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Override Node container active
+  .node-container--active {
+    box-shadow: inset 0 0 0 1/@em fade(@theme-light-black, 15%) !important;
+    background: @theme-light-node-container-active !important;
+
+    // Node Hover Inherited of Focused
+    .ft--left-children,
+    .ft--right-children,
+    .ft--middle-children,
+    .node-children-container,
+    .node-sequence-container, {
+      .node.node--focused {
+        & > .node__word > .node__word__tile:after {
+          opacity: 0 !important;
+        }
+      }
+    }
+  }
+
+  .node-container--active.node-container--collapsed {
+    background: transparent !important;
+  }
+
+  // Parse Tree Toolbar Overrides
+  .parse-tree-toolbar {
+    width: 100%;
+    color: @theme-light-toolbar-ui;
+
+    &:before {
+      background: @theme-light-toolbar-bg;
+      border-color: @theme-light-passage-border-color;
+      box-shadow: none;
+      opacity: 1;
+    }
+
+    .parse-tree-toolbar__item {
+      opacity: 1;
+
+      .parse-tree-toolbar__item__label {
+        transition-duration: .1s !important;
+
+        &:hover {
+          opacity: .66;
+        }
+      }
+    }
+
+    .tree-expansion-control {
+      .tree-expansion-control__glyph,
+      .tree-expansion-control__trigger {
+        opacity: .33;
+
+        .tree-expansion-control__glyph__triangle {
+          border-color: transparent;
+
+          &.tree-expansion-control__glyph__triangle--down {
+            border-top-color: @theme-light-toolbar-ui;
+          }
+
+          &.tree-expansion-control__glyph__triangle--up {
+            border-bottom-color: @theme-light-toolbar-ui;
+          }
+
+          &.tree-expansion-control__glyph__triangle--left {
+            border-right-color: @theme-light-toolbar-ui;
+          }
+
+          &.tree-expansion-control__glyph__triangle--right {
+            border-left-color: @theme-light-toolbar-ui;
+          }
+        }
+      }
+
+      &.tree-expansion-control:hover {
+        .tree-expansion-control__glyph {
+          opacity: 1;
+        }
+      }
+
+      &.tree-expansion-control:active {
+        .tree-expansion-control__glyph {
+          opacity: .5;
+        }
+      }
+    }
+  }
+
+  // Passage Overrides
+  #passage {
+    border-color: @theme-light-passage-border-color;
+    border-top: 0;
+    font-size: .75em;
+    height: 98/@em !important;
+
+    textarea,
+    p {
+      &,
+      .passage__readonly {
+        &,
+        .span-slice__self,
+        .span-slice__ignored {
+          color: @theme-light-passage-text-color;
+        }
+      }
+    }
+
+    p .passage__readonly {
+      .span-slice {
+        padding: 2px 0;
+
+        &.span-slice--focused {
+          & > span.span-slice__self {
+            box-shadow: none !important;
+          }
+        }
+
+        &.span-slice--hover {
+          background: fade(lighten(@theme-light-color0-focused, 22%), 15%);
+
+          span {
+            color: darken(@theme-light-passage-text-color, 10%);
+          }
+
+          & > span.span-slice__self {
+            background: fade(@theme-light-color0-focused, 15%);
+            color: darken(@theme-light-passage-text-color, 30%);
+          }
+        }
+
+        &.span-slice--pressed.span-slice--hover {
+          background: fade(lighten(@theme-light-color0-focused, 15%), 7%);
+
+          span {
+            color: darken(@theme-light-passage-text-color, 18%);
+          }
+
+          & > span.span-slice__self {
+            background: fade(@theme-light-color0-focused, 10%);
+          }
+        }
+
+        &.span-slice--focused {
+          & > span.span-slice__self {
+            background: @theme-light-color0-focused;
+            color: @theme-light-passage-focused;
+          }
+        }
+
+        // Span slice color overrides
+        &.span-slice--color1 {
+          &.span-slice--hover {
+            background: fade(lighten(@theme-light-color1-focused, 22%), 15%);
+            & > span.span-slice__self {
+              background: fade(@theme-light-color1-focused, 15%);
+            }
+          }
+
+          &.span-slice--pressed.span-slice--hover {
+            background: fade(lighten(@theme-light-color1-focused, 15%), 7%);
+            & > span.span-slice__self {
+              background: fade(@theme-light-color1-focused, 10%);
+            }
+          }
+
+          &.span-slice--focused > span.span-slice__self {
+            background: @theme-light-color1-focused;
+          }
+        }
+
+        &.span-slice--color2 {
+          &.span-slice--hover {
+            background: fade(lighten(@theme-light-color2-focused, 22%), 15%);
+            & > span.span-slice__self {
+              background: fade(@theme-light-color2-focused, 15%);
+            }
+          }
+
+          &.span-slice--pressed.span-slice--hover {
+            background: fade(lighten(@theme-light-color2-focused, 15%), 7%);
+            & > span.span-slice__self {
+              background: fade(@theme-light-color2-focused, 10%);
+            }
+          }
+
+          &.span-slice--focused > span.span-slice__self {
+            background: @theme-light-color2-focused;
+          }
+        }
+
+        &.span-slice--color3 {
+          &.span-slice--hover {
+            background: fade(lighten(@theme-light-color3-focused, 22%), 15%);
+            & > span.span-slice__self {
+              background: fade(@theme-light-color3-focused, 15%);
+            }
+          }
+
+          &.span-slice--pressed.span-slice--hover {
+            background: fade(lighten(@theme-light-color3-focused, 15%), 7%);
+            & > span.span-slice__self {
+              background: fade(@theme-light-color3-focused, 10%);
+            }
+          }
+
+          &.span-slice--focused > span.span-slice__self {
+            background: @theme-light-color3-focused;
+          }
+        }
+
+        &.span-slice--color4 {
+          &.span-slice--hover {
+            background: fade(lighten(@theme-light-color4-focused, 22%), 15%);
+            & > span.span-slice__self {
+              background: fade(@theme-light-color4-focused, 15%);
+            }
+          }
+
+          &.span-slice--pressed.span-slice--hover {
+            background: fade(lighten(@theme-light-color4-focused, 15%), 7%);
+            & > span.span-slice__self {
+              background: fade(@theme-light-color4-focused, 10%);
+            }
+          }
+
+          &.span-slice--focused > span.span-slice__self {
+            background: lighten(@theme-light-color4-focused, 10%);
+          }
+        }
+
+        &.span-slice--color5 {
+          &.span-slice--hover {
+            background: fade(lighten(@theme-light-color5-focused, 22%), 15%);
+            & > span.span-slice__self {
+              background: fade(@theme-light-color5-focused, 15%);
+            }
+          }
+
+          &.span-slice--pressed.span-slice--hover {
+            background: fade(lighten(@theme-light-color5-focused, 15%), 7%);
+            & > span.span-slice__self {
+              background: fade(@theme-light-color5-focused, 10%);
+            }
+          }
+
+          &.span-slice--focused > span.span-slice__self {
+            background: @theme-light-color5-focused;
+          }
+        }
+
+        &.span-slice--color6 {
+          &.span-slice--hover {
+            background: fade(lighten(@theme-light-color6-focused, 22%), 15%);
+            & > span.span-slice__self {
+              background: fade(@theme-light-color6-focused, 15%);
+            }
+          }
+
+          &.span-slice--pressed.span-slice--hover {
+            background: fade(lighten(@theme-light-color6-focused, 15%), 7%);
+            & > span.span-slice__self {
+              background: fade(@theme-light-color6-focused, 10%);
+            }
+          }
+
+          &.span-slice--focused > span.span-slice__self {
+            background: @theme-light-color6-focused;
+          }
+        }
+      }
+    }
+  }
+}
