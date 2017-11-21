@@ -27,7 +27,7 @@ Add the following styles to your web page, likely in the `<head />` tag:
 Then invoke `hierplane.renderTree(tree[, target])` as is desired.
 
    - `tree` *object* the tree to visualize
-   - `target` *string* an optional css selector, speicfying the element into which the vizualization
+   - `target` *string* an optional css selector, speicfying the element into which the visualization
      should be rendered. If not specified, the tree is rendered into the `<body />`.
 
 You can see a full example [here](./EXAMPLES.md).
@@ -85,3 +85,7 @@ To run the code locally and verify your changes, follow these steps:
 
 If you want to change the port on which the webserver is bound, set the `HIERPLANE_DEV_SERVER_PORT`
 environment variable to one of your choosing.
+
+## Publishing
+
+To publish a new version, increment the version in `package.json` and execute `bin/publish.js`.

@@ -14,7 +14,7 @@ import ReactDOM from 'react-dom';
  */
 export function renderTree(tree, options = { target: 'body' }) {
   ReactDOM.render(
-    <Tree tree={tree} readOnly={true} showSidebar={false} />,
+    <Tree tree={tree} />,
     document.querySelector(options.target)
   );
 }

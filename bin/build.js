@@ -32,12 +32,6 @@ if (!shouldSkipFirstBuild) {
   compileJavascript();
   bundleJavascript();
   compileLess();
-
-  // If we're building a production asset, minify the JS. We always minfiy the CSS given that
-  // the web inspector makes it easy to debug the CSS rules that are applied.
-  if (process.env.NODE_ENV === 'production') {
-    minifyJavascriptBundle();
-  }
 } else {
   console.log(chalk.yellow('skipping first build, as --skipInitial was passed'));
 }
@@ -159,21 +153,6 @@ function bundleJavascript() {
   if (isWatchTarget) {
     bundler.on('update', writeBundle);
   }
-}
-
-/**
- * Compresses the javascript bundle, so it's smaller / faster for end users to download.
- * @return {undefined}
- */
-function minifyJavascriptBundle() {
-  console.log(chalk.cyan(`minifying ${chalk.magenta('dist/static/hierplane.bundle.js')}`));
-  cp.execSync(
-    `${which.sync('uglifyjs')} dist/static/hierplane.bundle.js --compress --mangle -o ` +
-      `dist/static/hierplane.bundle.min.js`
-  );
-  console.log(chalk.green(
-    `minified bundle written to ${chalk.magenta('dist/static/hierplane.bundle.min.js')}`
-  ));
 }
 
 function runLocalServer() {

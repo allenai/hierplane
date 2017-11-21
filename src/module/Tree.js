@@ -34,8 +34,8 @@ class Tree extends Component {
       parser: 'default',
       theme: undefined,
       tree: undefined,
-      readOnly: false,
-      showSidebar: true
+      readOnly: true,
+      showSidebar: false
     };
   }
 
