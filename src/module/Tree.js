@@ -361,7 +361,7 @@ class Tree extends Component {
     const { readOnly, theme, showSidebar } = this.props;
 
     return (
-      <div className={`hierplane${theme !== undefined ? ` hierplane--theme-${theme}` : null}`}>
+      <div className={`hierplane${theme !== undefined ? ` hierplane--theme-${theme}` : ""}`}>
         <div className="pane-container">
           <div className="pane pane--scroll">
             <Passage
