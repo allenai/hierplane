@@ -16,4 +16,4 @@ const path = require('path');
 const execArgs = { cwd: path.resolve(__dirname, '..'), stdio: 'inherit' };
 
 cp.execSync('npm run prepare', execArgs);
-cp.exec('npm publish');
+cp.execSync('npm publish', execArgs);
