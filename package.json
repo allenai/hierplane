@@ -9,7 +9,8 @@
   "main": "dist/module/index.js",
   "scripts": {
     "build": "node ./bin/build.js",
-    "prepare": "npm run clean && npm run build -- --compress",
+    "minify": "uglifyjs dist/static/hierplane.bundle.js --compress --mangle -o dist/static/hierplane.min.js",
+    "prepare": "npm run clean && npm run build && npm run minify",
     "watch": "node ./bin/build.js --watch",
     "start": "node ./bin/build.js --server --watch",
     "test": "mocha --compilers js:babel-core/register 'src/**/*.test.js'",
