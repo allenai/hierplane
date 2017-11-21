@@ -22,6 +22,7 @@ if (args.has('-h') || args.has('--help')) {
   console.log('  --watch  -w          rebuild UI artifacts with every change to webui/webapp/app/**/*');
   console.log('  --server -s          run a local server for development purposes');
   console.log('  --skipInitial, -si   if specified with --watch, the first build is skipped');
+  console.log('  --compress, -c       if specified a minified javascript bundle will be built');
   process.exit(0);
 }
 const isWatchTarget = args.has('--watch') || args.has('-w');
@@ -35,7 +36,7 @@ if (!shouldSkipFirstBuild) {
 
   // If we're building a production asset, minify the JS. We always minfiy the CSS given that
   // the web inspector makes it easy to debug the CSS rules that are applied.
-  if (process.env.NODE_ENV === 'production') {
+  if (args.has('--compress') || args.has('-c')) {
     minifyJavascriptBundle();
   }
 } else {
@@ -123,7 +124,7 @@ function compileLess() {
  */
 function bundleJavascript() {
   const bundleEntryPath = path.resolve(__dirname, '..', 'dist', 'static', 'hierplane.js');
-  const bundlePath = path.resolve(__dirname, '..', 'dist', 'static', 'hierplane.bundle.js');
+  const bundlePath = path.resolve(__dirname, '..', 'dist', 'static', 'hierplane.js');
 
   // Put together our "bundler", which uses browserify
   const browserifyOpts = {
@@ -166,13 +167,13 @@ function bundleJavascript() {
  * @return {undefined}
  */
 function minifyJavascriptBundle() {
-  console.log(chalk.cyan(`minifying ${chalk.magenta('dist/static/hierplane.bundle.js')}`));
+  console.log(chalk.cyan(`minifying ${chalk.magenta('dist/static/hierplane.js')}`));
   cp.execSync(
-    `${which.sync('uglifyjs')} dist/static/hierplane.bundle.js --compress --mangle -o ` +
-      `dist/static/hierplane.bundle.min.js`
+    `${which.sync('uglifyjs')} dist/static/hierplane.js --compress --mangle -o ` +
+      `dist/static/hierplane.min.js`
   );
   console.log(chalk.green(
-    `minified bundle written to ${chalk.magenta('dist/static/hierplane.bundle.min.js')}`
+    `minified bundle written to ${chalk.magenta('dist/static/hierplane.min.js')}`
   ));
 }
 
