@@ -1,6 +1,6 @@
 {
   "name": "hierplane",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A javascript library for visualizing hierarchical data, specifically tailored towards rendering dependency parses.",
   "files": [
     "dist/**/*.js",
@@ -11,7 +11,7 @@
     "build": "node ./bin/build.js",
     "watch": "node ./bin/build.js --watch",
     "start": "node ./bin/build.js --server --watch",
-    "prepublishOnly": "npm run clean && NODE_ENV==production && npm run build",
+    "prepublishOnly": "npm run clean && npm run build -- --compress",
     "test": "mocha --compilers js:babel-core/register 'src/**/*.test.js'",
     "clean": "rm -rf dist/"
   },
