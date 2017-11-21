@@ -33,8 +33,8 @@ class Tree extends Component {
       urlText: undefined,
       parser: 'default',
       tree: undefined,
-      readOnly: false,
-      showSidebar: true
+      readOnly: true,
+      showSidebar: false
     };
   }
 
