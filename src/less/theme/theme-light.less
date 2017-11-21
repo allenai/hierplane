@@ -33,6 +33,10 @@
   @theme-light-passage-border-color: #eee;
   @theme-light-passage-focused: @theme-light-white;
 
+  // toolbar
+  @theme-light-toolbar-bg: #f9fafc;
+  @theme-light-toolbar-ui: @theme-light-black;
+
   // Theme-specific Less functions
   .theme-light-fn-bg(@v) {
     background: lighten(@v, 15%);
@@ -232,6 +236,70 @@
 
   .node-container--active.node-container--collapsed {
     background: transparent !important;
+  }
+
+  // Parse Tree Toolbar Overrides
+  .parse-tree-toolbar {
+    width: 100%;
+    color: @theme-light-toolbar-ui;
+
+    &:before {
+      background: @theme-light-toolbar-bg;
+      border-color: @theme-light-passage-border-color;
+      box-shadow: none;
+      opacity: 1;
+    }
+
+    .parse-tree-toolbar__item {
+      opacity: 1;
+
+      .parse-tree-toolbar__item__label {
+        transition-duration: .1s !important;
+
+        &:hover {
+          opacity: .66;
+        }
+      }
+    }
+
+    .tree-expansion-control {
+      .tree-expansion-control__glyph,
+      .tree-expansion-control__trigger {
+        opacity: .33;
+
+        .tree-expansion-control__glyph__triangle {
+          border-color: transparent;
+
+          &.tree-expansion-control__glyph__triangle--down {
+            border-top-color: @theme-light-toolbar-ui;
+          }
+
+          &.tree-expansion-control__glyph__triangle--up {
+            border-bottom-color: @theme-light-toolbar-ui;
+          }
+
+          &.tree-expansion-control__glyph__triangle--left {
+            border-right-color: @theme-light-toolbar-ui;
+          }
+
+          &.tree-expansion-control__glyph__triangle--right {
+            border-left-color: @theme-light-toolbar-ui;
+          }
+        }
+      }
+
+      &.tree-expansion-control:hover {
+        .tree-expansion-control__glyph {
+          opacity: 1;
+        }
+      }
+
+      &.tree-expansion-control:active {
+        .tree-expansion-control__glyph {
+          opacity: .5;
+        }
+      }
+    }
   }
 
   // Passage Overrides
