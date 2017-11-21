@@ -85,3 +85,7 @@ To run the code locally and verify your changes, follow these steps:
 
 If you want to change the port on which the webserver is bound, set the `HIERPLANE_DEV_SERVER_PORT`
 environment variable to one of your choosing.
+
+## Publishing
+
+To publish a new version, increment the version in `package.json` and execute `bin/publish.js`.
