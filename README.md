@@ -27,7 +27,7 @@ Add the following styles to your web page, likely in the `<head />` tag:
 Then invoke `hierplane.renderTree(tree[, target])` as is desired.
 
    - `tree` *object* the tree to visualize
-   - `target` *string* an optional css selector, speicfying the element into which the vizualization
+   - `target` *string* an optional css selector, speicfying the element into which the visualization
      should be rendered. If not specified, the tree is rendered into the `<body />`.
 
 You can see a full example [here](./EXAMPLES.md).
