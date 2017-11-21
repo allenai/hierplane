@@ -27,258 +27,295 @@ const introData = {
         "charLo": 0,
         "charHi": 85
       },
-      "spanAnnotations": [{
-        "spanType": "child",
-        "lo": 0,
-        "hi": 63
-      }, {
-        "spanType": "ignored",
-        "lo": 63,
-        "hi": 64
-      }, {
-        "spanType": "child",
-        "lo": 61,
-        "hi": 84
-      }, {
-        "spanType": "ignored",
-        "lo": 84,
-        "hi": 85
-      }]
-    },
-    "children": [{
-      "nodeType": "verb",
-      "word": "can explore",
-      "link": "none",
-      "alternateParseInfo": {
-        "charNodeRoot": {
-          "charLo": 0,
-          "charHi": 63
-        },
-        "spanAnnotations": [{
+      "spanAnnotations": [
+        {
           "spanType": "child",
           "lo": 0,
-          "hi": 14
-        }, {
-          "spanType": "ignored",
-          "lo": 14,
-          "hi": 15
-        }, {
-          "spanType": "child",
-          "lo": 16,
-          "hi": 19
-        }, {
-          "spanType": "self",
-          "lo": 20,
-          "hi": 31
-        }, {
-          "spanType": "child",
-          "lo": 32,
-          "hi": 53
-        }, {
-          "spanType": "child",
-          "lo": 54,
           "hi": 63
-        }]
-      },
-      "children": [{
-        "nodeType": "modifier",
-        "word": "With",
-        "link": "preposition",
+        },
+        {
+          "spanType": "ignored",
+          "lo": 63,
+          "hi": 64
+        },
+        {
+          "spanType": "child",
+          "lo": 61,
+          "hi": 84
+        },
+        {
+          "spanType": "ignored",
+          "lo": 84,
+          "hi": 85
+        }
+      ]
+    },
+    "children": [
+      {
+        "nodeType": "verb",
+        "word": "can explore",
+        "link": "none",
         "alternateParseInfo": {
           "charNodeRoot": {
             "charLo": 0,
-            "charHi": 14
-          },
-          "spanAnnotations": [{
-            "spanType": "self",
-            "lo": 0,
-            "hi": 4
-          }, {
-            "spanType": "child",
-            "lo": 5,
-            "hi": 14
-          }]
-        },
-        "children": [{
-          "nodeType": "noun",
-          "word": "Hierplane",
-          "link": "parg",
-          "alternateParseInfo": {
-            "charNodeRoot": {
-              "charLo": 5,
-              "charHi": 14
-            },
-            "spanAnnotations": [{
-              "spanType": "self",
-              "lo": 5,
-              "hi": 14
-            }]
-          }
-        }]
-      }, {
-        "nodeType": "noun",
-        "word": "you",
-        "link": "subj",
-        "alternateParseInfo": {
-          "charNodeRoot": {
-            "charLo": 16,
-            "charHi": 19
-          },
-          "spanAnnotations": [{
-            "spanType": "self",
-            "lo": 16,
-            "hi": 19
-          }]
-        }
-      }, {
-        "nodeType": "noun",
-        "word": "structures",
-        "link": "obj",
-        "alternateParseInfo": {
-          "charNodeRoot": {
-            "charLo": 32,
-            "charHi": 53
-          },
-          "spanAnnotations": [{
-            "spanType": "child",
-            "lo": 32,
-            "hi": 42
-          }, {
-            "spanType": "self",
-            "lo": 43,
-            "hi": 53
-          }]
-        },
-        "children": [{
-          "nodeType": "modifier",
-          "word": "linguistic",
-          "link": "Adjective",
-          "alternateParseInfo": {
-            "charNodeRoot": {
-              "charLo": 32,
-              "charHi": 42
-            },
-            "spanAnnotations": [{
-              "spanType": "self",
-              "lo": 32,
-              "hi": 42
-            }]
-          }
-        }]
-      }, {
-        "nodeType": "modifier",
-        "word": "naturally",
-        "link": "Adverb",
-        "alternateParseInfo": {
-          "charNodeRoot": {
-            "charLo": 54,
             "charHi": 63
           },
-          "spanAnnotations": [{
-            "spanType": "self",
-            "lo": 54,
-            "hi": 63
-          }]
-        }
-      }]
-    },
-    {
-      "nodeType": "verb",
-      "word": "Try",
-      "attributes": ["Imperative"],
-      "link": "none",
-      "alternateParseInfo": {
-        "charNodeRoot": {
-          "charLo": 65,
-          "charHi": 84
+          "spanAnnotations": [
+            {
+              "spanType": "child",
+              "lo": 0,
+              "hi": 14
+            },
+            {
+              "spanType": "ignored",
+              "lo": 14,
+              "hi": 15
+            },
+            {
+              "spanType": "child",
+              "lo": 16,
+              "hi": 19
+            },
+            {
+              "spanType": "self",
+              "lo": 20,
+              "hi": 31
+            },
+            {
+              "spanType": "child",
+              "lo": 32,
+              "hi": 53
+            },
+            {
+              "spanType": "child",
+              "lo": 54,
+              "hi": 63
+            }
+          ]
         },
-        "spanAnnotations": [
+        "children": [
           {
-            "spanType": "self",
-            "lo": 65,
-            "hi": 69
+            "nodeType": "modifier",
+            "word": "With",
+            "link": "preposition",
+            "alternateParseInfo": {
+              "charNodeRoot": {
+                "charLo": 0,
+                "charHi": 14
+              },
+              "spanAnnotations": [
+                {
+                  "spanType": "self",
+                  "lo": 0,
+                  "hi": 4
+                },
+                {
+                  "spanType": "child",
+                  "lo": 5,
+                  "hi": 14
+                }
+              ]
+            },
+            "children": [
+              {
+                "nodeType": "noun",
+                "word": "Hierplane",
+                "link": "parg",
+                "alternateParseInfo": {
+                  "charNodeRoot": {
+                    "charLo": 5,
+                    "charHi": 14
+                  },
+                  "spanAnnotations": [
+                    {
+                      "spanType": "self",
+                      "lo": 5,
+                      "hi": 14
+                    }
+                  ]
+                }
+              }
+            ]
           },
           {
-            "spanType": "child",
-            "lo": 69,
-            "hi": 71
+            "nodeType": "noun",
+            "word": "you",
+            "link": "subj",
+            "alternateParseInfo": {
+              "charNodeRoot": {
+                "charLo": 16,
+                "charHi": 19
+              },
+              "spanAnnotations": [
+                {
+                  "spanType": "self",
+                  "lo": 16,
+                  "hi": 19
+                }
+              ]
+            }
           },
           {
-            "spanType": "child",
-            "lo": 72,
-            "hi": 84
+            "nodeType": "noun",
+            "word": "structures",
+            "link": "obj",
+            "alternateParseInfo": {
+              "charNodeRoot": {
+                "charLo": 32,
+                "charHi": 53
+              },
+              "spanAnnotations": [
+                {
+                  "spanType": "child",
+                  "lo": 32,
+                  "hi": 42
+                },
+                {
+                  "spanType": "self",
+                  "lo": 43,
+                  "hi": 53
+                }
+              ]
+            },
+            "children": [
+              {
+                "nodeType": "modifier",
+                "word": "linguistic",
+                "link": "adjective",
+                "alternateParseInfo": {
+                  "charNodeRoot": {
+                    "charLo": 32,
+                    "charHi": 42
+                  },
+                  "spanAnnotations": [
+                    {
+                      "spanType": "self",
+                      "lo": 32,
+                      "hi": 42
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "nodeType": "modifier",
+            "word": "naturally",
+            "link": "adverb",
+            "alternateParseInfo": {
+              "charNodeRoot": {
+                "charLo": 54,
+                "charHi": 63
+              },
+              "spanAnnotations": [
+                {
+                  "spanType": "self",
+                  "lo": 54,
+                  "hi": 63
+                }
+              ]
+            }
           }
         ]
       },
-      "children": [
-        {
-          "nodeType": "implied",
-          "word": "you",
-          "link": "subj"
-        },
-        {
-          "nodeType": "noun",
-          "word": "it",
-          "link": "obj",
-          "alternateParseInfo": {
-            "charNodeRoot": {
-              "charLo": 69,
-              "charHi": 71
+      {
+        "nodeType": "verb",
+        "word": "Try",
+        "attributes": ["imperative"],
+        "link": "none",
+        "alternateParseInfo": {
+          "charNodeRoot": {
+            "charLo": 65,
+            "charHi": 84
+          },
+          "spanAnnotations": [
+            {
+              "spanType": "self",
+              "lo": 65,
+              "hi": 69
             },
-            "spanAnnotations": [
+            {
+              "spanType": "child",
+              "lo": 69,
+              "hi": 71
+            },
+            {
+              "spanType": "child",
+              "lo": 72,
+              "hi": 84
+            }
+          ]
+        },
+        "children": [
+          {
+            "nodeType": "implied",
+            "word": "you",
+            "link": "subj"
+          },
+          {
+            "nodeType": "noun",
+            "word": "it",
+            "link": "obj",
+            "alternateParseInfo": {
+              "charNodeRoot": {
+                "charLo": 69,
+                "charHi": 71
+              },
+              "spanAnnotations": [
+                {
+                  "spanType": "self",
+                  "lo": 69,
+                  "hi": 71
+                }
+              ]
+            }
+          },
+          {
+            "nodeType": "modifier",
+            "word": "for",
+            "link": "preposition",
+            "alternateParseInfo": {
+              "charNodeRoot": {
+                "charLo": 72,
+                "charHi": 84
+              },
+              "spanAnnotations": [
+                {
+                  "spanType": "self",
+                  "lo": 72,
+                  "hi": 75
+                },
+                {
+                  "spanType": "child",
+                  "lo": 76,
+                  "hi": 84
+                }
+              ]
+            },
+            "children": [
               {
-                "spanType": "self",
-                "lo": 69,
-                "hi": 71
+                "nodeType": "noun",
+                "word": "yourself",
+                "link": "parg",
+                "alternateParseInfo": {
+                  "charNodeRoot": {
+                    "charLo": 76,
+                    "charHi": 84
+                  },
+                  "spanAnnotations": [
+                    {
+                      "spanType": "self",
+                      "lo": 76,
+                      "hi": 84
+                    }
+                  ]
+                }
               }
             ]
           }
-        },
-        {
-          "nodeType": "modifier",
-          "word": "for",
-          "link": "preposition",
-          "alternateParseInfo": {
-            "charNodeRoot": {
-              "charLo": 72,
-              "charHi": 84
-            },
-            "spanAnnotations": [
-              {
-                "spanType": "self",
-                "lo": 72,
-                "hi": 75
-              },
-              {
-                "spanType": "child",
-                "lo": 76,
-                "hi": 84
-              }
-            ]
-          },
-          "children": [
-            {
-              "nodeType": "noun",
-              "word": "yourself",
-              "link": "parg",
-              "alternateParseInfo": {
-                "charNodeRoot": {
-                  "charLo": 76,
-                  "charHi": 84
-                },
-                "spanAnnotations": [
-                  {
-                    "spanType": "self",
-                    "lo": 76,
-                    "hi": 84
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      ]
-    }]
+        ]
+      }
+    ]
   }
 };
 
