@@ -13,7 +13,11 @@ const path = require('path');
 // Whenever we incoke `cp.exec` or `cp.execSync` these args set the correct
 // working directory and ensure that stdout / sterr are streamed to the
 // current TTY
-const execArgs = { cwd: path.resolve(__dirname, '..'), stdio: 'inherit' };
+const execArgs = {
+  cwd: path.resolve(__dirname, '..'),
+  stdio: 'inherit',
+  env: { NODE_ENV: 'production' }
+};
 
 cp.execSync('npm run prepare', execArgs);
 cp.execSync('npm publish', execArgs);
