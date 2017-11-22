@@ -158,7 +158,7 @@ Span
   spanType
 ```
 
-You can see a full example of a tree [here](data/the-sum-of-three-consecutive-integers.json).
+You can see a full example of a tree [here](dev/data/the-sum-of-three-consecutive-integers.json).
 
 ## Contributing
 
