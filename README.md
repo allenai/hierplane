@@ -29,6 +29,8 @@ Then invoke `hierplane.renderTree(tree[, target])` as is desired.
    - `tree` *object* the tree to visualize
    - `target` *string* an optional css selector, speicfying the element into which the visualization
      should be rendered. If not specified, the tree is rendered into the `<body />`.
+   - `theme` *string* an optional custom theme. By not specifying a theme, the default "dark" theme
+     will be used. There is a "light" theme built-in that can be applied by setting `theme: "light"`.
 
 You can see a full example [here](./EXAMPLES.md).
 
