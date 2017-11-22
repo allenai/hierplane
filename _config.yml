@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-url: "http://hierplane.allenai.org" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://allenai.github.io/hierplane" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown
