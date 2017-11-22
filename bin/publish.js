@@ -9,6 +9,7 @@
  */
 const cp = require('child_process');
 const path = require('path');
+const merge = require('merge');
 
 // Whenever we incoke `cp.exec` or `cp.execSync` these args set the correct
 // working directory and ensure that stdout / sterr are streamed to the
@@ -16,7 +17,7 @@ const path = require('path');
 const execArgs = {
   cwd: path.resolve(__dirname, '..'),
   stdio: 'inherit',
-  env: { NODE_ENV: 'production' }
+  env: merge(process.env, { 'NODE_ENV': 'production' })
 };
 
 cp.execSync('npm run prepare', execArgs);
