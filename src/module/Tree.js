@@ -32,6 +32,7 @@ class Tree extends Component {
       router: { transitionTo: () => {} },
       urlText: undefined,
       parser: 'default',
+      theme: undefined,
       tree: undefined,
       readOnly: true,
       showSidebar: false
@@ -50,6 +51,7 @@ class Tree extends Component {
    *                                                      submitting an API request.
    *                                                      TODO (codeviking): This should not be a
    *                                                      property of the tree.
+   * @property {string}               [theme=undefined]   A property for applying a custom theme.
    * @property {object}               [tree=undefined]    The tree to render.
    * @property {readOnly}             [boolean=false]     If true, the UI doesn't allow the end
    *                                                      user to modify the sentence / submit it
@@ -64,6 +66,7 @@ class Tree extends Component {
       router: React.PropTypes.object.isRequired,
       urlText: React.PropTypes.string,
       parser: React.PropTypes.string,
+      theme: React.PropTypes.string,
       tree: React.PropTypes.object,
       readOnly: React.PropTypes.bool,
       showSidebar: PropTypes.bool.isRequired,
@@ -355,10 +358,10 @@ class Tree extends Component {
             serverEndPoint } = this.state;
 
 
-    const { readOnly, showSidebar } = this.props;
+    const { readOnly, theme, showSidebar } = this.props;
 
     return (
-      <div className="hierplane">
+      <div className={`hierplane${theme !== undefined ? ` hierplane--theme-${theme}` : ""}`}>
         <div className="pane-container">
           <div className="pane pane--scroll">
             <Passage

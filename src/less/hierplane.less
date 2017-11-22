@@ -80,5 +80,11 @@
 
   // Explainer / Pane Modifiers
   @import './explainer/pane/pane_mod.less';
-
 }
+
+// Themes
+// TODO (aarons @ codeviking):
+// Ideally, we wouldn't include all themes in the every CSS bundle,
+// and instead we'd produce separate CSS files that the end user
+// could include as appropriate. That way they'd get smaller static files.
+@import './theme/theme-light.less';
