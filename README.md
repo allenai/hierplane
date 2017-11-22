@@ -154,6 +154,8 @@ Span
    * An optional identifier indicating the type of span. As of now, the only value you'll likely
    * put here is "ignored", which indicates that the span shouldn't be emphasized when the node
    * is hovered.
+   * @type string
+   * @optional
    */
   spanType
 ```
