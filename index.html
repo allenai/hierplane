@@ -1,6 +1,19 @@
-<!doctype html><html>
+---
+---
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
+    {% include meta.html %}
+    {% include styles.html %}
     <title>Hierplane</title>
   </head>
-  <body>Hierplane!</body>
+  <body data-page="home">
+    {% include intro.html %}
+    {% include tree.html %}
+    {% include features.html %}
+    {% include getstarted.html %}
+    {% include builtby.html %}
+    {% include footer.html %}
+    {% include scripts.html %}
+  </body>
 </html>

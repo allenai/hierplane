@@ -1,0 +1,47 @@
+#tree {
+  min-height: 454*$rem;
+  background: $gray-darker;
+  box-shadow: 0 $margin 80*$rem fade-out($gray-darker, 0.85),
+              0 2*$rem 4*$rem fade-out($gray-darker, 0.75);
+  position: relative;
+  z-index: 1;
+
+  // Custom Hierplane overrides
+  .hierplane .pane--scroll,
+  .hierplane #main-stage,
+  .hierplane #passage {
+    overflow: visible !important;
+    overflow-x: auto !important;
+  }
+
+  .hierplane #passage {
+    font-size: .75em;
+    height: 98*$rem !important;
+  }
+  .hierplane #passage p .passage__readonly .span-slice {
+    padding: 2px 0
+  }
+}
+
+// Mobile Faux-tree
+@media screen and (max-width:680*$rem) {
+  #tree {
+    min-height: 0;
+    height: 66.764706vw;
+    background: $gray-darker url(../assets/tree-static.jpg) center top / 100% auto no-repeat;
+
+    .hierplane {
+      display: none;
+    }
+  }
+}
+
+// Retina Faux-tree
+@media screen and (max-width:680*$rem) and (-webkit-min-device-pixel-ratio : 1.5),
+ all and (-o-min-device-pixel-ratio: 3/2),
+ all and (min--moz-device-pixel-ratio: 1.5),
+ all and (min-device-pixel-ratio: 1.5) {
+  #tree.mobile {
+    background-image: url(../assets/tree-static@2x.jpg);
+  }
+}

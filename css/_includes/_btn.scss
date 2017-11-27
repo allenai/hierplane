@@ -1,0 +1,26 @@
+.btn {
+  display: block;
+  width: 100%;
+  max-width: 170*$rem;
+  font-size: 15*$rem;
+  font-weight: 500;
+  color: $gray-darker;
+  padding: $margin-3q;
+  border: 1*$rem solid $gray-medium;
+  transition: color $trans-props,
+              border-color $trans-props,
+              background-color $trans-props,
+              opacity $trans-props;
+
+  &:hover {
+    color: $white;
+    border-color: $blue-light;
+    background: $blue-light;
+  }
+
+  &:active {
+    color: fade-out($white, 0.25);
+    opacity: 0.5;
+    transition-duration: 0s;
+  }
+}

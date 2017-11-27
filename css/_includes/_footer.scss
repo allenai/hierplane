@@ -1,0 +1,105 @@
+.footer {
+  min-height: 146*$rem;
+
+  .section__content {
+    max-width: 99vw;
+    display: flex;
+    align-items: center;
+    padding: $margin-3 $margin-3q * 2;
+  }
+
+  .logo {
+    width: 154*$rem;
+    height: 32*$rem;
+  }
+
+  .footer__nav {
+    height: 32*$rem;
+    display: block;
+    margin-left: $margin + $margin-half;
+
+    .nav__list {
+      .nav__item {
+        a,
+        a.nav__item--active {
+          span {
+            color: $gray-medium;
+            @include crisp;
+          }
+
+          &:hover {
+            span {
+              color: $white;
+            }
+          }
+        }
+
+        &.nav__item--active {
+          a:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .footer__copyright {
+    font-size: 12*$rem;
+    color: $gray-medium-dark;
+    margin-left: auto;
+    cursor: default;
+
+    .footer__builtby {
+      color: $gray-medium;
+      padding-right: 3*$rem;
+
+      .link {
+        color: $gray-medium;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+// Retina Faux-tree
+@media screen and (max-width:1160*$rem) {
+  .footer {
+    .section__content {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      margin-bottom: $margin;
+    }
+
+    .footer__nav {
+      margin-bottom: $margin;
+    }
+
+    .footer__copyright {
+      text-align: center;
+      margin-left: inherit;
+    }
+  }
+}
+
+@media screen and (max-width:640*$rem) {
+  .footer {
+    min-height: 0;
+    .section__content {
+      padding: $margin-3q * 2 $margin;
+    }
+  }
+}
+
+@media screen and (max-width:480*$rem) {
+  .footer {
+    .footer__nav {
+      display: none;
+    }
+  }
+}

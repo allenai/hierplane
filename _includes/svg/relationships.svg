@@ -1,0 +1,5 @@
+<svg class="feature__image__relationships" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 75">
+  <path class="svg--gray-light" d="M77,43.5h-8.2l-4,8.7H25.2l-4-8.7H13c-4.4,0-8,3.6-8,8v15.1c0,4.4,3.6,8,8,8h64c4.4,0,8-3.6,8-8V51.5 C85,47.1,81.4,43.5,77,43.5z"/>
+  <path class="svg--gray-medium" d="M81.9,37.4H8.1c-4.4,0-8-3.6-8-8v-21c0-4.4,3.6-8,8-8h73.8c4.4,0,8,3.6,8,8v21C89.9,33.8,86.3,37.4,81.9,37.4z" />
+  <rect x="31.9" y="43" class="svg--gray-medium" width="26.3" height="3.2" />
+</svg>

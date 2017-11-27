@@ -1,0 +1,20 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    {% include meta.html %}
+    {% include styles.html %}
+    <title>Hierplane</title>
+  </head>
+  <body data-page="demo">
+    <section id="examples">
+      {% include header.html %}
+      {% include examples.html %}
+    </section>
+    {% include scripts.html %}
+    <script>
+      hierplane.renderTree(exampleData, { target: "#examples__content" });
+    </script>
+  </body>
+</html>

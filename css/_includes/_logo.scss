@@ -1,0 +1,12 @@
+.logo {
+  margin: 0;
+
+  .logo__text {
+    display: none;
+  }
+
+  .logo__svg {
+    width: 154*$rem;
+    height: 32*$rem;
+  }
+}

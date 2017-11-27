@@ -1,0 +1,15 @@
+<header class="header section">
+  <div class="section__content">
+    {% if include.logo != "hide" %}
+      <a class="header__logo" {% include url/url-home.html %}>
+        {% include logo.html %}
+      </a>
+    {% endif %}
+    <nav class="header__nav">
+      {% include nav.html %}
+    </nav>
+    <div id="header__mow-nav-trigger">
+      {% include svg/menu.svg %}
+    </div>
+  </div>
+</header>
