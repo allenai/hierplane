@@ -5,7 +5,7 @@ dependency parses.
 
 ## Usage
 
-There are three ways to use `hierplane`:
+There are two ways to use `hierplane`:
 
 * [In a web page, without dependencies](#web)
 * [In a web application that uses ReactJS](#web-react)
