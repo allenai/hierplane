@@ -195,4 +195,8 @@ environment variable to one of your choosing.
 
 ## Publishing
 
-To publish a new version, increment the version in `package.json` and execute `bin/publish.js`.
+In order to publish, you will need to be a collaborator on the [Hierplane NPM project](https://www.npmjs.com/package/hierplane).
+
+1. Make sure to increment the Hierplane version in `package.json`.
+2. If you're not already logged in, from your `hierplane` project folder, enter `npm login` and log in with your NPM credentials.
+3. Execute `node bin/publish.js`.
