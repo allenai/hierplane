@@ -94,7 +94,7 @@ Tree
    */
   linkToPosition: { ... }
   /**
-   * Map use to override link labels (see `Style Maps` section).
+   * Map used to override link labels (see `Style Maps` section).
    * @type object
    * @optional
    */
@@ -210,11 +210,13 @@ A `nodeTypeToStyle` mapping applies specified styles to nodes with particular `n
 }
 ```
 
-**Supported nodeTypeToStyle Keys:**
+Note: Hierplane will automatically color-code nodes based on their `nodeType` values, so out-of-the-box, you do not need to worry about `nodeTypeToStyle` mapping. However, as soon as you add this map and introduce a custom style on any `nodeType`, you will need to manually apply all node styles, as the automatic styling will be disabled at that point.
+
+**Supported `nodeTypeToStyle` Keys:**
 
 Any potential `nodeType` value is a valid key, whether it's being used in the current tree or not.
 
-**Supported nodeTypeToStyle Values:**
+**Supported `nodeTypeToStyle` Values:**
 
 Valid values are arrays of strings. While you are free to apply any string as a style, only the following strings are supported by the built-in stylesheet:
 
@@ -226,7 +228,7 @@ Valid values are arrays of strings. While you are free to apply any string as a 
 * `"color5"` colors node purple.
 * `"color6"` colors node aqua.
 * `"strong"` makes node text larger and bold.
-* `"seq"` renders node as a sequence container. Note that this style is required for nodes that have any children with a `nodeType` value of `"inside"`. Also note that a node with this style will have its default node `text` hidden to make room for its `"inside"` children.
+* `"seq"` renders node as a sequence container. Note that this style is required to correctly render nodes that have at least one child node with a `nodeType` value of `"inside"`. Also note that a node with a `"seq"` style will have its default node `text` hidden to make room for its `"inside"` children.
 * `"placeholder"` renders node with a transparent background and light dotted outline (to communicate a placeholder status, recommended for certain linguistic concepts such as relative references).
 
 Note: at this time, the only supported colors are the 7 mentioned above.
@@ -243,11 +245,11 @@ A `linkToPosition` mapping tells the app how to position nodes with particular `
 }
 ```
 
-**Supported linkToPosition Keys:**
+**Supported `linkToPosition` Keys:**
 
 Any potential `link` value is a valid key, whether it's being used in the current tree or not.
 
-**Supported linkToPosition Values:**
+**Supported `linkToPosition` Values:**
 
 * `inside` - Positions node inside of its parent. This was added mainly to support linguistic sequences (e.g. "The land has trees, grass, and animals." where the object of the sentence is a sequence of nouns).
 
@@ -268,11 +270,11 @@ A `linkNameToLabel` mapping translates particular `link` values into custom disp
 }
 ```
 
-**Supported linkNameToLabel Keys:**
+**Supported `linkNameToLabel` Keys:**
 
 Any potential `link` value is a valid key, whether it's being used in the current tree or not.
 
-**Supported linkNameToLabel Values:**
+**Supported `linkNameToLabel` Values:**
 
 Any string is a valid value.
 
