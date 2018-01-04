@@ -249,7 +249,7 @@ Any potential `link` value is a valid key, whether it's being used in the curren
 
 **Supported linkToPosition Values:**
 
-* `inside` - Positions node inside of its parent. This was added mainly to support linguistic sequences linguistics (e.g. "The land has trees, grass, and animals." where the object of the sentence is a sequence of nouns).
+* `inside` - Positions node inside of its parent. This was added mainly to support linguistic sequences (e.g. "The land has trees, grass, and animals." where the object of the sentence is a sequence of nouns).
 
 * `left` - Positions a node to the left of its parent (well suited for subjects of a sentence).
 
