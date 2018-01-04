@@ -210,11 +210,11 @@ A `nodeTypeToStyle` mapping applies specified styles to nodes with particular `n
 }
 ```
 
-**Supported Keys:**
+**Supported nodeTypeToStyle Keys:**
 
 Any potential `nodeType` value is a valid key, whether it's being used in the current tree or not.
 
-**Supported Values:**
+**Supported nodeTypeToStyle Values:**
 
 Valid values are arrays of strings. While you are free to apply any string as a style, only the following strings are supported by the built-in stylesheet:
 
@@ -243,11 +243,11 @@ A `linkToPosition` mapping tells the app how to position nodes with particular `
 }
 ```
 
-**Supported Keys:**
+**Supported linkToPosition Keys:**
 
 Any potential `link` value is a valid key, whether it's being used in the current tree or not.
 
-**Supported Values:**
+**Supported linkToPosition Values:**
 
 * `inside` - Positions node inside of its parent. This was added mainly to support linguistic sequences linguistics (e.g. "The land has trees, grass, and animals." where the object of the sentence is a sequence of nouns).
 
@@ -268,11 +268,11 @@ A `linkNameToLabel` mapping translates particular `link` values into custom disp
 }
 ```
 
-**Supported Keys:**
+**Supported linkNameToLabel Keys:**
 
 Any potential `link` value is a valid key, whether it's being used in the current tree or not.
 
-**Supported Values:**
+**Supported linkNameToLabel Values:**
 
 Any string is a valid value.
 
