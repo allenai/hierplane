@@ -3,7 +3,15 @@
 A javascript library for visualizing hierarchical data, specifically tailored towards rendering
 dependency parses.
 
-## Usage
+## Table of Contents
+
+* [Usage](#usage)
+* [Tree structure](#tree-structure)
+* [Style Maps](#maps)
+* [Contributing](#contributing)
+* [Publishing](#publishing)
+
+## <a name="usage"></a>Usage
 
 There are two ways to use `hierplane`:
 
@@ -73,6 +81,24 @@ Tree
    * @required
    */
   text: 'Sam likes eating hot dogs.'
+  /**
+   * Map used to apply node styles (see `Style Maps` section).
+   * @type object
+   * @optional
+   */
+  nodeTypeToStyle: { ... }
+  /**
+   * Map used to set node positioning (see `Style Maps` section).
+   * @type object
+   * @optional
+   */
+  linkToPosition: { ... }
+  /**
+   * Map use to override link labels (see `Style Maps` section).
+   * @type object
+   * @optional
+   */
+  linkNameToLabel: { ... }
   /**
    * The root node of the tree.
    * @type object
@@ -162,7 +188,95 @@ Span
 
 You can see a full example of a tree [here](dev/data/the-sum-of-three-consecutive-integers.json).
 
-## Contributing
+## <a name="maps"></a>Style Maps
+
+The Hierplane data format supports three optional style maps (objects containing a set of key-value pairs) that can be added to a `Tree` object:
+
+*  [`nodeTypeToStyle`](#nodetypetostyle) applies specified styles to nodes with particular `nodeType` values.
+*  [`linkToPosition`](#linktoposition) tells the app how to position nodes with particular `link` values.
+*  [`linkNameToLabel`](#linknametolabel) translates particular `link` values into custom display labels.
+
+### <a name="nodetypetostyle"></a>nodeTypeToStyle
+
+A `nodeTypeToStyle` mapping applies specified styles to nodes with particular `nodeType` values. In the following example, any node with a `nodeType` value of `"verb"` will have `"color1"` and `"strong"` styles applied. This gets rendered as CSS modifier classes.
+
+```
+"nodeTypeToStyle": {
+  "verb": ["color1", "strong"],
+  "noun": ["color2"],
+  "modifier": ["color3"],
+  "sequence": ["seq"],
+  "reference": ["placeholder"]
+}
+```
+
+**Supported Keys:**
+
+Any potential `nodeType` value is a valid key, whether it's being used in the current tree or not.
+
+**Supported Values:**
+
+Valid values are arrays of strings. While you are free to apply any string as a style, only the following strings are supported by the built-in stylesheet:
+
+* `"color0"` colors node gray.
+* `"color1"` colors node green.
+* `"color2"` colors node blue.
+* `"color3"` colors node pink.
+* `"color4"` colors node yellow.
+* `"color5"` colors node purple.
+* `"color6"` colors node aqua.
+* `"strong"` makes node text larger and bold.
+* `"seq"` renders node as a sequence container. Note that this style is required for nodes that have any children with a `nodeType` value of `"inside"`. Also note that a node with this style will have its default node `text` hidden to make room for its `"inside"` children.
+* `"placeholder"` renders node with a transparent background and light dotted outline (to communicate a placeholder status, recommended for certain types of linguistic concepts such as relative references).
+
+Note: at this time, the only supported colors are the 7 mentioned above.
+
+### <a name="linktoposition">linkToPosition
+
+A `linkToPosition` mapping tells the app how to position nodes with particular `link` values. In the following example, any node with a link value of `"subj"` will be given a position of `"left"`, while nodes with link values of `"obj"` will be given a position of `"right"` and so on.
+
+```
+"linkToPosition": {
+  "subj": "left",
+  "obj": "right",
+  "seqChild": "inside"
+}
+```
+
+**Supported Keys:**
+
+Any potential `link` value is a valid key, whether it's being used in the current tree or not.
+
+**Supported Values:**
+
+* `inside` - Positions node inside of its parent. This was added mainly to support linguistic sequences linguistics (e.g. "The land has trees, grass, and animals." where the object of the sentence is a sequence of nouns).
+
+* `left` - Positions a node to the left of its parent (well suited for subjects of a sentence).
+
+* `right` - Positions a node to the right of its parent (well suited for objects of a sentence).
+
+* `down` - Positions a node directly underneath its parent (we call this layout "canonical"). All nodes have a position of `down` by default, so it is not necessary to explicitly set this.
+
+### <a name="linknametolabel">linkNameToLabel
+
+A `linkNameToLabel` mapping translates particular `link` values into custom display labels. In the following example, any node with a `link` value of `"subj"` will be displayed as `"S"`. This is especially useful for nodes positioned `"left"` and `"right"`, as those configurations lose aesthetic value with long link labels.
+
+```
+"linkNameToLabel": {
+  "subj": "S",
+  "obj": "O"
+}
+```
+
+**Supported Keys:**
+
+Any potential `link` value is a valid key, whether it's being used in the current tree or not.
+
+**Supported Values:**
+
+Any string is a valid value.
+
+## <a name="contributing"></a>Contributing
 
 To run the code locally and verify your changes, follow these steps:
 
@@ -193,7 +307,7 @@ To run the code locally and verify your changes, follow these steps:
 If you want to change the port on which the webserver is bound, set the `HIERPLANE_DEV_SERVER_PORT`
 environment variable to one of your choosing.
 
-## Publishing
+## <a name="publishing"></a>Publishing
 
 In order to publish, you will need to be a collaborator on the [Hierplane NPM project](https://www.npmjs.com/package/hierplane).
 
