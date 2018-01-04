@@ -227,7 +227,7 @@ Valid values are arrays of strings. While you are free to apply any string as a 
 * `"color6"` colors node aqua.
 * `"strong"` makes node text larger and bold.
 * `"seq"` renders node as a sequence container. Note that this style is required for nodes that have any children with a `nodeType` value of `"inside"`. Also note that a node with this style will have its default node `text` hidden to make room for its `"inside"` children.
-* `"placeholder"` renders node with a transparent background and light dotted outline (to communicate a placeholder status, recommended for certain types of linguistic concepts such as relative references).
+* `"placeholder"` renders node with a transparent background and light dotted outline (to communicate a placeholder status, recommended for certain linguistic concepts such as relative references).
 
 Note: at this time, the only supported colors are the 7 mentioned above.
 
