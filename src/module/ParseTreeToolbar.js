@@ -1,7 +1,8 @@
 import { collapseAllNodes, expandAllNodes } from './stores/modules/ui';
 
 import { connect } from 'react-redux';
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 import TreeExpansionControl from './TreeExpansionControl.js';
 

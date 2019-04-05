@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 // TODO (codeviking): This component is a duplicate of webui/webapp/app/components/Icon.jsx. When
 // migrating hierplane to it's own dependency, I had to move this too. Eventually we should

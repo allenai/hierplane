@@ -1,6 +1,3 @@
-/* eslint-disable react/no-multi-comp */
-
-// Local dependencies
 import MainStage from './MainStage.js';
 import Passage from './Passage.js';
 import SideBar from './pane/SideBar.js';
@@ -23,7 +20,13 @@ import {
 import IconSprite from './IconSprite.js';
 
 import { connect } from 'react-redux';
-import React, { Component, PropTypes } from 'react';
+
+/* eslint-disable react/no-multi-comp */
+
+// Local dependencies
+import PropTypes from 'prop-types';
+
+import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 
 class Tree extends Component {
@@ -63,12 +66,12 @@ class Tree extends Component {
    */
   static get propTypes() {
     return {
-      router: React.PropTypes.object.isRequired,
-      urlText: React.PropTypes.string,
-      parser: React.PropTypes.string,
-      theme: React.PropTypes.string,
-      tree: React.PropTypes.object,
-      readOnly: React.PropTypes.bool,
+      router: PropTypes.object.isRequired,
+      urlText: PropTypes.string,
+      parser: PropTypes.string,
+      theme: PropTypes.string,
+      tree: PropTypes.object,
+      readOnly: PropTypes.bool,
       showSidebar: PropTypes.bool.isRequired,
       addAllNodeIds: PropTypes.func.isRequired,
       collapseAllNodes: PropTypes.func.isRequired,

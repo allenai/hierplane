@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import NodeProperties from './NodeProperties.js';
 import AltParseNav from './AltParseNav.js';
 import StrRep from './StrRep.js';

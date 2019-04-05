@@ -6,7 +6,8 @@ import { expandNode, toggleNode } from '../stores/modules/ui';
 import classNames from 'classnames/bind';
 import { connect } from 'react-redux';
 import Immutable from 'immutable';
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 class Node extends Component {
   constructor() {

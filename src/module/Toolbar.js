@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 // `Toolbar` displays the Euclid tool buttons.
 class Toolbar extends React.Component {
@@ -44,7 +45,7 @@ class Toolbar extends React.Component {
 }
 
 Toolbar.propTypes = {
-  jsonUrl: React.PropTypes.string,
+  jsonUrl: PropTypes.string,
   serverEndPoint: PropTypes.bool,
   jsonData: PropTypes.object,
   selectedData: PropTypes.object,
