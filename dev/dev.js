@@ -45,11 +45,13 @@
 
   const containerId = 'tree';
   const container = document.getElementById(containerId);
+  let unmount = null;
   function renderTree(idx) {
-    if (container.firstElementChild) {
-      container.removeChild(container.firstElementChild);
+    if (typeof unmount == 'function') {
+        unmount();
+        unmount = null;
     }
-    hierplane.renderTree(getTreeAtIdx(idx), { target: `#${containerId}` });
+    unmount = hierplane.renderTree(getTreeAtIdx(idx), { target: `#${containerId}` });
   }
 
   renderSelectTreeUI(event => { renderTree(event.target.value) })
