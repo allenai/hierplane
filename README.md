@@ -42,6 +42,18 @@ Then invoke `hierplane.renderTree(tree[, options])` as is desired.
         - `options.target` *string* a css selector targeting the element where
           the resulting DOM should be rendered, defaults to 'body'.
 
+The `renderTree()` method returns a function that will unmount the rendered
+content, if you want to remove the visualization:
+
+```javascript
+const unmount = hierplane.renderTree(tree, { target: '#hierplane', theme: 'light' });
+// Don't do this
+const target = document.getElementById('hierplane');
+target.removeChild(target.firstElementChild);
+// Do this
+unmount();
+```
+
 You can see a full example [here](./EXAMPLES.md).
 
 ### <a name="web-react"></a>In a web application that uses ReactJS:
