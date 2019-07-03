@@ -32,14 +32,15 @@ Add the following styles to your web page, likely in the `<head />` tag:
 <link rel="stylesheet" type="text/css" href="//unpkg.com/hierplane/dist/static/hierplane.min.css">
 ```
 
-Then invoke `hierplane.renderTree(tree[, target])` as is desired.
+Then invoke `hierplane.renderTree(tree[, options])` as is desired.
 
-   - `tree` *object* the tree to visualize, see <a href="#tree-structure">a detailed description of
+    - `tree` *object* the tree to visualize, see <a href="#tree-structure">a detailed description of
      the tree structure.</a>
-   - `target` *string* an optional css selector, specifying the element into which the visualization
-     should be rendered. If not specified, the tree is rendered into the `<body />`.
-   - `theme` *string* an optional custom theme. By not specifying a theme, the default "dark" theme
-     will be used. There is a "light" theme built-in that can be applied by setting `theme: "light"`.
+    - `options` *object* optional overrides
+        - `options.theme` *string* the theme to use, one of 'dark' or 'light', 
+           defaults to 'dark'.
+        - `options.target` *string* a css selector targeting the element where
+          the resulting DOM should be rendered, defaults to 'body'.
 
 You can see a full example [here](./EXAMPLES.md).
 
