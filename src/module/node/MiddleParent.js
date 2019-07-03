@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import NodeWord from './NodeWord.js';
 import classNames from 'classnames/bind';
 

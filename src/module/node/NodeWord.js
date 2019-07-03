@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import Attributes from './Attributes.js';
 import Link from './Link.js';
 import UiToggle from './UiToggle.js';

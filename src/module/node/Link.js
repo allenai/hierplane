@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import LinkSvg from './LinkSvg.js';
 
 class Link extends React.Component {
