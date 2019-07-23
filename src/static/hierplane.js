@@ -20,6 +20,6 @@ export function renderTree(tree, options = { target: 'body', theme: 'dark' }) {
     node
   );
   return function unmount() {
-    ReactDOM.unmountComponentAtNode(node.firstElementChild)
+    ReactDOM.unmountComponentAtNode(node)
   };
 }
