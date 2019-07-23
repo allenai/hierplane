@@ -105,7 +105,7 @@ function compileJavascript(filePath) {
  */
 function compileLess() {
   console.log(chalk.cyan(`compiling ${chalk.magenta('src/less/hierplane.less')}`));
-  cp.execSync(`${which.sync('lessc')} --clean-css --autoprefix="last 2 versions" src/less/hierplane.less dist/static/hierplane.min.css`);
+  cp.execSync(`${which.sync('lessc')} -x --autoprefix="last 2 versions" src/less/hierplane.less dist/static/hierplane.min.css`);
   console.log(chalk.green(`wrote ${chalk.magenta('dist/static/hierplane.min.css')}`));
 }
 
