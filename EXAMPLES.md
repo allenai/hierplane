@@ -2,7 +2,7 @@
 
 ## In a web page:
 
-Here's an example, showing how the dependency parse for the sentence `"Sam likes bananas"` can be
+Here's an example, showing how the dependency parse for the sentence `"Sam likes boats"` can be
 rendered using `hierplane`:
 
 ```
@@ -15,7 +15,7 @@ rendered using `hierplane`:
     <script src="//unpkg.com/hierplane/dist/static/hierplane.min.js"></script>
     <script>
       const tree = {
-        text: 'Sam likes bananas',
+        text: 'Sam likes boats',
         root: {
           nodeType: 'event',
           word: 'like',
@@ -40,7 +40,7 @@ rendered using `hierplane`:
             },
             {
               nodeType: 'entity',
-              word: 'banana',
+              word: 'boat',
               link: 'object',
               attributes: [ '>1'],
               spans: [

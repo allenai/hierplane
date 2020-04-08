@@ -1,5 +1,5 @@
 {
-  "text": "Sam likes bananas",
+  "text": "Sam likes boats",
   "root": {
     "nodeType": "event",
     "word": "like",
@@ -24,7 +24,7 @@
       },
       {
         "nodeType": "entity",
-        "word": "banana",
+        "word": "boat",
         "link": "object",
         "attributes": [ ">1"],
         "spans": [
