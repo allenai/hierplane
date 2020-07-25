@@ -19,11 +19,7 @@ export function isSingleSegment(kind) {
  * Setting children to [] indicates the base case where map is acting on an empty array, therefore
  * not recursing. A set with that leaf node's id is returned in this case.
  */
-export function getCollapsibleNodeIds({
-  id,
-  children = [],
-  kind
-}, singleSegment) {
+export function getCollapsibleNodeIds({ id, children = [], kind}, singleSegment) {
   /*
     We only want to capture the ids of nodes that are collapsible, and, therefore, only nodes that
     a) have children and b) are not "root" nodes (as root nodes are not collapsible).
@@ -40,9 +36,9 @@ export function getCollapsibleNodeIds({
   const dataCollapsible = hasChildren && !isRoot && !isEventRoot;
   const nodeId = dataCollapsible ? [id] : [];
 
-  return hasChildren ?
-    Immutable.Set(nodeId).union(...children.map(child => getCollapsibleNodeIds(child, singleSegment))) :
-    Immutable.Set();
+  return hasChildren
+    ? Immutable.Set(nodeId).union(...children.map(child => getCollapsibleNodeIds(child, singleSegment)))
+    : Immutable.Set();
 }
 
 // Filter color style out of the style object and return the value:
@@ -83,7 +79,7 @@ export function assignNodeIds(node, prefix = '', childIdx = 0) {
  * @return {Immutable.Set<String>}  All unique nodeType values present in the tree.
  */
 export function findAllNodeTypes(node) {
-  const nodeTypes = Immutable.Set([node.nodeType]);
+  const nodeTypes = Immutable.Set([ node.nodeType ]);
   if (Array.isArray(node.children)) {
     return node.children.reduce((types, node) => types.concat(findAllNodeTypes(node)), nodeTypes);
   } else {
@@ -104,7 +100,7 @@ export function generateStylesForNodeTypes(nodeTypes) {
   }
   return nodeTypes.reduce((nodeTypeToStyle, nodeType) => {
     // We have colors 0 through 6.  Dyanmically assign them.
-    return nodeTypeToStyle.set(nodeType, [`color${nodeTypeToStyle.size % 6 + 1}`]);
+    return nodeTypeToStyle.set(nodeType, [ `color${nodeTypeToStyle.size % 6 + 1}` ]);
   }, Immutable.Map()).toJS();
 }
 
@@ -134,17 +130,15 @@ export function translateSpans(origNode) {
     const boundaries = getSpanBoundaries(node);
     const charNodeRoot = (
       boundaries ?
-      new CharNodeRoot(boundaries.start, boundaries.end) :
-      undefined
+      ? new CharNodeRoot(boundaries.start, boundaries.end)
+      : undefined
     );
 
     // TODO (codeviking): The UI should really support it being `undefined`, rather that using
     // if node.hasOwnProperty('charNodeRoot'), as then we wouldn't have to have carefully
     // implemented logic like so.
     if (charNodeRoot) {
-      node.alternateParseInfo = {
-        charNodeRoot
-      };
+      node.alternateParseInfo = { charNodeRoot };
     }
 
     // Now let's build up spanAnnotations, which are the aggregate boundaries (charNodeRoot) of the
@@ -153,21 +147,15 @@ export function translateSpans(origNode) {
       (node.children || [])
       .filter(n => n.alternateParseInfo && n.alternateParseInfo.charNodeRoot)
       .map(n => new Span(
-        /* lo = */
-        n.alternateParseInfo.charNodeRoot.charLo,
-        /* hi = */
-        n.alternateParseInfo.charNodeRoot.charHi,
-        /* spanType = */
-        'child'
+        /* lo = */ n.alternateParseInfo.charNodeRoot.charLo,
+        /* hi = */ n.alternateParseInfo.charNodeRoot.charHi,
+        /* spanType = */ 'child'
       ))
       .concat(
         (node.spans || []).map(span => new Span(
-          /* lo = */
-          span.start,
-          /* hi = */
-          span.end,
-          /* spanType = */
-          span.spanType || 'self'
+          /* lo = */ span.start,
+          /* hi = */ span.end,
+          /* spanType = */ span.spanType || 'self'
         ))
       ).sort((first, second) => first.lo - second.lo);
 
@@ -226,16 +214,16 @@ function getSpanBoundaries(node) {
  */
 function getAllChildSpans(node) {
   return (
-    Array.isArray(node.children) ?
-    node.children
-    .map(n => (n.spans || []).concat(getAllChildSpans(n)))
-    .reduce((all, arr) => all.concat(arr)) :
-    []
+    Array.isArray(node.children)
+      ? node.children
+          .map(n => (n.spans || []).concat(getAllChildSpans(n)))
+          .reduce((all, arr) => all.concat(arr))
+      : []
   );
 }
 
 class Span {
-  constructor(lo, hi, spanType, spanText) {
+  constructor(lo, hi, spanType) {
     this.lo = lo;
     this.hi = hi;
     this.spanType = spanType;
