@@ -129,7 +129,7 @@ export function translateSpans(origNode) {
     // aggregate boundaries of the span and all of its children.
     const boundaries = getSpanBoundaries(node);
     const charNodeRoot = (
-      boundaries ?
+      boundaries
         ? new CharNodeRoot(boundaries.start, boundaries.end)
         : undefined
     );
