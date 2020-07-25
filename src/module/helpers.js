@@ -19,7 +19,7 @@ export function isSingleSegment(kind) {
  * Setting children to [] indicates the base case where map is acting on an empty array, therefore
  * not recursing. A set with that leaf node's id is returned in this case.
  */
-export function getCollapsibleNodeIds({ id, children = [], kind}, singleSegment) {
+export function getCollapsibleNodeIds({ id, children = [], kind }, singleSegment) {
   /*
     We only want to capture the ids of nodes that are collapsible, and, therefore, only nodes that
     a) have children and b) are not "root" nodes (as root nodes are not collapsible).
@@ -130,8 +130,8 @@ export function translateSpans(origNode) {
     const boundaries = getSpanBoundaries(node);
     const charNodeRoot = (
       boundaries ?
-      ? new CharNodeRoot(boundaries.start, boundaries.end)
-      : undefined
+        ? new CharNodeRoot(boundaries.start, boundaries.end)
+        : undefined
     );
 
     // TODO (codeviking): The UI should really support it being `undefined`, rather that using
@@ -145,19 +145,19 @@ export function translateSpans(origNode) {
     // node's immediate children and the node's own spans.
     const spanAnnotations =
       (node.children || [])
-      .filter(n => n.alternateParseInfo && n.alternateParseInfo.charNodeRoot)
-      .map(n => new Span(
-        /* lo = */ n.alternateParseInfo.charNodeRoot.charLo,
-        /* hi = */ n.alternateParseInfo.charNodeRoot.charHi,
-        /* spanType = */ 'child'
-      ))
-      .concat(
-        (node.spans || []).map(span => new Span(
-          /* lo = */ span.start,
-          /* hi = */ span.end,
-          /* spanType = */ span.spanType || 'self'
+        .filter(n => n.alternateParseInfo && n.alternateParseInfo.charNodeRoot)
+        .map(n => new Span(
+          /* lo = */ n.alternateParseInfo.charNodeRoot.charLo,
+          /* hi = */ n.alternateParseInfo.charNodeRoot.charHi,
+          /* spanType = */ 'child'
         ))
-      ).sort((first, second) => first.lo - second.lo);
+        .concat(
+          (node.spans || []).map(span => new Span(
+            /* lo = */ span.start,
+            /* hi = */ span.end,
+            /* spanType = */ span.spanType || 'self'
+          ))
+        ).sort((first, second) => first.lo - second.lo);
 
     // TODO (codeviking): Again, the UI should handle the "empty state" appropriately as to prevent
     // logic like this from being necessary.
