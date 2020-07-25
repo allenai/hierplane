@@ -80,6 +80,7 @@ class PassageSpan extends Component {
 
         // If the child node span fits inside the bounds of the child fragment that triggered this recursion:
         if (spanLo >= lo && spanHi <= hi) {
+          // TODO there is still a rendering bug in the passagespan somewhere
           return (
             <PassageSpanWrapper
               key={childNode.id}
