@@ -126,7 +126,7 @@ export function translateSpans(origNode) {
   // case we shouldn't mutate the tree.
   if (!node.alternateParseInfo) {
     // First we build up alternateParseInfo.charNodeRoot, which is a single span that captures the
-    // aggregate boundaries of the span and all of it's children.
+    // aggregate boundaries of the span and all of its children.
     const boundaries = getSpanBoundaries(node);
     const charNodeRoot = (
       boundaries
@@ -138,7 +138,7 @@ export function translateSpans(origNode) {
     // if node.hasOwnProperty('charNodeRoot'), as then we wouldn't have to have carefully
     // implemented logic like so.
     if (charNodeRoot) {
-        node.alternateParseInfo = { charNodeRoot };
+      node.alternateParseInfo = { charNodeRoot };
     }
 
     // Now let's build up spanAnnotations, which are the aggregate boundaries (charNodeRoot) of the
@@ -149,7 +149,7 @@ export function translateSpans(origNode) {
         .map(n => new Span(
           /* lo = */ n.alternateParseInfo.charNodeRoot.charLo,
           /* hi = */ n.alternateParseInfo.charNodeRoot.charHi,
-          /* spanType = */'child'
+          /* spanType = */ 'child'
         ))
         .concat(
           (node.spans || []).map(span => new Span(
@@ -196,7 +196,10 @@ function getSpanBoundaries(node) {
         boundaries.end = span.end;
       }
       return boundaries;
-    }, { start: firstSpan.start, end: firstSpan.end });
+    }, {
+      start: firstSpan.start,
+      end: firstSpan.end
+    });
   } else {
     return undefined;
   }

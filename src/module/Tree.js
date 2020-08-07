@@ -62,7 +62,7 @@ class Tree extends Component {
    * @property {showSidebar}          [boolean=true]      If false the sidebar isn't displayed.
    * @property {addAllNodeIds}        {function}          TODO (codeviking): What is this?
    * @property {collapseAllNodes}     {function}          A function which collapses all nodes
-   * @property {collapseDescendants}  {function}          A function whichcollapses all descendent nodes
+   * @property {collapseDescendants}  {function}          A function which collapses all descendent nodes
    */
   static get propTypes() {
     return {

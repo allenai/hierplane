@@ -1,0 +1,149 @@
+{
+  "text": "the quick red fox jumped over the lazy dog",
+  "root": {
+    "word": "jumped",
+    "nodeType": "root",
+    "attributes": ["VERB"],
+    "link": "root",
+    "spans": [{
+      "start": 18,
+      "end": 25
+    }],
+    "children": [{
+        "word": "fox",
+        "nodeType": "nsubj",
+        "attributes": ["PROPN"],
+        "link": "nsubj",
+        "spans": [{
+          "start": 14,
+          "end": 18
+        }],
+        "children": [{
+            "word": "quick",
+            "nodeType": "dep",
+            "attributes": ["ADJ"],
+            "link": "dep",
+            "spans": [{
+              "start": 4,
+              "end": 10
+            }]
+          },
+          {
+            "word": "red",
+            "nodeType": "amod",
+            "attributes": ["PROPN"],
+            "link": "amod",
+            "spans": [{
+              "start": 10,
+              "end": 14
+            }],
+            "children": [{
+              "word": "the",
+              "nodeType": "det",
+              "attributes": ["DET"],
+              "link": "det",
+              "spans": [{
+                "start": 0,
+                "end": 4
+              }]
+            }]
+          }
+        ]
+      },
+      {
+        "word": "over",
+        "nodeType": "dep",
+        "attributes": ["ADP"],
+        "link": "dep",
+        "spans": [{
+          "start": 25,
+          "end": 30
+        }],
+        "children": [{
+          "word": "dog",
+          "nodeType": "pobj",
+          "attributes": ["NOUN"],
+          "link": "pobj",
+          "spans": [{
+            "start": 39,
+            "end": 43
+          }],
+          "children": [{
+              "word": "the",
+              "nodeType": "det",
+              "attributes": ["DET"],
+              "link": "det",
+              "spans": [{
+                "start": 30,
+                "end": 34
+              }]
+            },
+            {
+              "word": "lazy",
+              "nodeType": "amod",
+              "attributes": ["ADJ"],
+              "link": "amod",
+              "spans": [{
+                "start": 34,
+                "end": 39
+              }]
+            }
+          ]
+        }]
+      }
+    ]
+  },
+  "nodeTypeToStyle": {
+    "root": ["color5", "strong"],
+    "dep": ["color5", "strong"],
+    "nsubj": ["color1"],
+    "nsubjpass": ["color1"],
+    "csubj": ["color1"],
+    "csubjpass": ["color1"],
+    "pobj": ["color2"],
+    "dobj": ["color2"],
+    "iobj": ["color2"],
+    "mark": ["color2"],
+    "pcomp": ["color2"],
+    "xcomp": ["color2"],
+    "ccomp": ["color2"],
+    "acomp": ["color2"],
+    "aux": ["color3"],
+    "cop": ["color3"],
+    "det": ["color3"],
+    "conj": ["color3"],
+    "cc": ["color3"],
+    "prep": ["color3"],
+    "number": ["color3"],
+    "possesive": ["color3"],
+    "poss": ["color3"],
+    "discourse": ["color3"],
+    "expletive": ["color3"],
+    "prt": ["color3"],
+    "advcl": ["color3"],
+    "mod": ["color4"],
+    "amod": ["color4"],
+    "tmod": ["color4"],
+    "quantmod": ["color4"],
+    "npadvmod": ["color4"],
+    "infmod": ["color4"],
+    "advmod": ["color4"],
+    "appos": ["color4"],
+    "nn": ["color4"],
+    "neg": ["color0"],
+    "punct": ["color0"]
+  },
+  "linkToPosition": {
+    "nsubj": "left",
+    "nsubjpass": "left",
+    "csubj": "left",
+    "csubjpass": "left",
+    "pobj": "right",
+    "dobj": "right",
+    "iobj": "right",
+    "pcomp": "right",
+    "xcomp": "right",
+    "ccomp": "right",
+    "acomp": "right"
+  }
+}

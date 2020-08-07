@@ -50,15 +50,21 @@ class NodeWord extends React.Component {
 
     // Iterates through spanAnnotations to wrap head word ("self") in a <strong> tag
     // so it is visually distinct from the rest of the rollup text.
-    const rollupText = hasFragments ? fragmentData.map((item, index) => {
-      if (item.spanType === "self") {
-        return (
-          <strong key={index}> {text.slice(item.lo, item.hi)} </strong>
-        );
-      } else {
-        return ` ${text.slice(item.lo, item.hi)} `;
+    const rollupText = hasFragments ? fragmentData.reduce((out, item, index) => {
+      if (out.slice(item.lo, item.hi).every(element => element === null)) {
+        if (item.spanType === "self") {
+          out[item.lo] = (
+            <strong key={index}> {text.slice(item.lo, item.hi)} </strong>
+          );
+        } else {
+          out[item.lo] = ` ${text.slice(item.lo, item.hi)} `;
+        }
+        for (var i = item.lo + 1; i < item.hi; i++) {
+          out[i] = '';
+        }
       }
-    }) : null;
+      return out;
+    }, []) : null;
 
     const toggle = (
       <UiToggle
